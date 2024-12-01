@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\Projects\\MCE ASP NET MVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\viewmodels\\empty.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\viewmodels\\empty.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\models\\empty.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\models\\empty.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\wwwroot\\js\\empty.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\wwwroot\\js\\empty.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\wwwroot\\images\\empty.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\wwwroot\\images\\empty.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\wwwroot\\css\\empty.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\wwwroot\\css\\empty.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,27 +47,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\_ViewStart.cshtml",
-              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "MCE ASP NET MVC\\Views\\_ViewStart.cshtml",
+              "Title": "Empty.txt",
+              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\ViewModels\\Empty.txt",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\ViewModels\\Empty.txt",
+              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\ViewModels\\Empty.txt",
+              "RelativeToolTip": "MCE ASP NET MVC\\ViewModels\\Empty.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-15T06:12:22.467Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-01T15:35:22.193Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\_ViewImports.cshtml",
-              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "MCE ASP NET MVC\\Views\\_ViewImports.cshtml",
+              "Title": "Empty.txt",
+              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Models\\Empty.txt",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Models\\Empty.txt",
+              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Models\\Empty.txt",
+              "RelativeToolTip": "MCE ASP NET MVC\\Models\\Empty.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-15T06:11:24.763Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-01T15:35:11.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Empty.txt",
+              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\wwwroot\\js\\Empty.txt",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\wwwroot\\js\\Empty.txt",
+              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\wwwroot\\js\\Empty.txt",
+              "RelativeToolTip": "MCE ASP NET MVC\\wwwroot\\js\\Empty.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-01T15:34:39.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Empty.txt",
+              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\wwwroot\\images\\Empty.txt",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\wwwroot\\images\\Empty.txt",
+              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\wwwroot\\images\\Empty.txt",
+              "RelativeToolTip": "MCE ASP NET MVC\\wwwroot\\images\\Empty.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-01T15:34:29.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Empty.txt",
+              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\wwwroot\\css\\Empty.txt",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\wwwroot\\css\\Empty.txt",
+              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\wwwroot\\css\\Empty.txt",
+              "RelativeToolTip": "MCE ASP NET MVC\\wwwroot\\css\\Empty.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-01T15:34:09.426Z",
               "EditorCaption": ""
             }
           ]

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Projects\\MCE ASP NET MVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,27 +35,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\Home\\Index.cshtml \u2B24",
-              "RelativeToolTip": "MCE ASP NET MVC\\Views\\Home\\Index.cshtml \u2B24",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "MCE ASP NET MVC\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-15T06:10:43.665Z",
+              "WhenOpened": "2024-09-15T06:12:22.467Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "MCE ASP NET MVC\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "MCE ASP NET MVC\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-15T06:09:21.275Z",
+              "WhenOpened": "2024-09-15T06:11:24.763Z",
               "EditorCaption": ""
             }
           ]
