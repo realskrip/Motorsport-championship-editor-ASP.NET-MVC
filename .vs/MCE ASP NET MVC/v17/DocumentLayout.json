@@ -1,24 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\dskripnikov\\Desktop\\mce\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\migrations\\20241202050905_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\migrations\\20241202050905_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -26,60 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20241202050905_InitialMigration.cs",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Migrations\\20241202050905_InitialMigration.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Migrations\\20241202050905_InitialMigration.cs",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Migrations\\20241202050905_InitialMigration.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\Migrations\\20241202050905_InitialMigration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T05:09:06.134Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Program.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Program.cs",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Program.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T04:28:24.986Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Models\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Models\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Models\\ApplicationDbContext.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\Models\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T04:21:37.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\appsettings.json",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\appsettings.json",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\appsettings.json",
-              "RelativeToolTip": "MCE ASP NET MVC\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-02T04:01:52.471Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"

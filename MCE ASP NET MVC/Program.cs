@@ -1,4 +1,4 @@
-using MCE_ASP_NET_MVC.Models;
+using MCE_ASP_NET_MVC.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
