@@ -1,0 +1,21 @@
+﻿body {
+    margin: 0;
+}
+
+header {
+    background-color: #a4a4a4;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 50%;
+}
+
+td.loginPartial {
+    text-align: right;
+    padding-right: 10px;
+}

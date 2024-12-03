@@ -1,9 +1,24 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
-        <p><partial name="_LoginPartial" /></p>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/css/_LayoutStyle.css" />
+        <title>Motorsport championship editor</title>
     </head>
     <body>
+        <header>
+            <table>
+                <tr>
+                    <td>
+                        <p>Motorsport championship editor</p>
+                    </td>
+                    <td class="loginPartial">
+                        <p><partial name="_LoginPartial" /></p>
+                    </td>
+                </tr>
+            </table>
+        </header>
+
         @RenderBody()
     </body>
 </html>
