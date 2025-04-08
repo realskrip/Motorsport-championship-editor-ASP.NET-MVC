@@ -1,20 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dskripnikov\\Desktop\\mce\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\wwwroot\\css\\_layoutstyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\wwwroot\\css\\_layoutstyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\Projects\\MCE ASP NET MVC\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,43 +20,8 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "MCE ASP NET MVC\\Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-03T09:28:46.017Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "MCE ASP NET MVC\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-03T09:13:41.343Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_LayoutStyle.css",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\wwwroot\\css\\_LayoutStyle.css",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\wwwroot\\css\\_LayoutStyle.css",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\wwwroot\\css\\_LayoutStyle.css",
-              "RelativeToolTip": "MCE ASP NET MVC\\wwwroot\\css\\_LayoutStyle.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-03T09:11:34.187Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             }
           ]
         }

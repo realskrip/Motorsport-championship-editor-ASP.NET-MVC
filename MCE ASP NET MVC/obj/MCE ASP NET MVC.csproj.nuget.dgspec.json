@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\MCE ASP NET MVC.csproj": {}
+    "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\MCE ASP NET MVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\MCE ASP NET MVC.csproj": {
+    "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\MCE ASP NET MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\MCE ASP NET MVC.csproj",
+        "projectUniqueName": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\MCE ASP NET MVC.csproj",
         "projectName": "MCE ASP NET MVC",
-        "projectPath": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\MCE ASP NET MVC.csproj",
-        "packagesPath": "C:\\Users\\dskripnikov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\obj\\",
+        "projectPath": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\MCE ASP NET MVC.csproj",
+        "packagesPath": "C:\\Users\\skrip\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dskripnikov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\skrip\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -42,9 +42,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -100,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
