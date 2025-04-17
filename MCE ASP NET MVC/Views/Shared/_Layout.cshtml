@@ -1,24 +1,24 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-            <link rel="stylesheet" href="/css/_LayoutStyle.css" />
-        <title>Motorsport championship editor</title>
-    </head>
-    <body>
-        <header>
-            <table>
-                <tr>
-                    <td>
-                        <p>Motorsport championship editor</p>
-                    </td>
-                    <td class="loginPartial">
-                        <p><partial name="_LoginPartial" /></p>
-                    </td>
-                </tr>
-            </table>
-        </header>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/_LayoutStyle.css" />
+    <title>Motorsport championship editor</title>
+</head>
+<body>
+    <header>
+        <table>
+            <tr>
+                <td>
+                    <a asp-controller="Home" asp-action="Index">Motorsport championship editor</a>
+                </td>
+                <td class="loginPartial">
+                    <p><partial name="_LoginPartial" /></p>
+                </td>
+            </tr>
+        </table>
+    </header>
 
-        @RenderBody()
-    </body>
+    @RenderBody()
+</body>
 </html>
