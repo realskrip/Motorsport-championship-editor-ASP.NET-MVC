@@ -2,6 +2,6 @@
 {
     public class FriendsViewModel
     {
-        public required string UserId { get; set; }
+        public required string currentUserFriendshipСode { get; set; }
     }
 }
