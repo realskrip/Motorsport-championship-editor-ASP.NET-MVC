@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace MCE_ASP_NET_MVC.Models
+﻿namespace MCE_ASP_NET_MVC.Models
 {
     public class UserFriend
     {

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MCE_ASP_NET_MVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250421101122_MainMigration")]
+    [Migration("20250421133957_MainMigration")]
     partial class MainMigration
     {
         /// <inheritdoc />
@@ -36,6 +36,29 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.HasKey("userId", "friendId");
 
                     b.ToTable("user_friends");
+                });
+
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.Notification", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("id"));
+
+                    b.Property<string>("notification")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("userId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("userId");
+
+                    b.ToTable("notifications");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -239,6 +262,15 @@ namespace MCE_ASP_NET_MVC.Migrations
                 });
 
             modelBuilder.Entity("MCE_ASP_NET_MVC.Models.UserFriend", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("userId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.Notification", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
