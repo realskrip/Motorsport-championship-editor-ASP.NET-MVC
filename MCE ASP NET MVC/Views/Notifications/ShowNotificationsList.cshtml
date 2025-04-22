@@ -1,1 +1,13 @@
-﻿Notifications
+﻿@model MCE_ASP_NET_MVC.ViewModels.NotificationsViewModel
+
+@if (Model.notifications.Count() > 0)
+{
+    @foreach (var item in Model.notifications)
+    {
+        @item.notification
+    }
+}
+else
+{
+    <p>No notifications</p>
+}

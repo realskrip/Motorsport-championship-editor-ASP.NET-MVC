@@ -5,16 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MCE_ASP_NET_MVC.Controllers
 {
-    public class FriendsController : Controller
+    public class FriendsController : BaseController
     {
-        private readonly Microsoft.AspNetCore.Identity.UserManager<Microsoft.AspNetCore.Identity.IdentityUser> _userManager;
-        private readonly ApplicationDbContext _db;
-
-        public FriendsController(ApplicationDbContext db, Microsoft.AspNetCore.Identity.UserManager<Microsoft.AspNetCore.Identity.IdentityUser> userManager)
-        {
-            _db = db;
-            _userManager = userManager;
-        }
+        public FriendsController(ApplicationDbContext db, Microsoft.AspNetCore.Identity.UserManager<Microsoft.AspNetCore.Identity.IdentityUser> userManager) : base(db, userManager) { }
 
         public async Task<IActionResult> ShowFriendList()
         {
