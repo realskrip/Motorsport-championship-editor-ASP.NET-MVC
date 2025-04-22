@@ -9,11 +9,21 @@ namespace MCE_ASP_NET_MVC.Controllers
         public NotificationsController(ApplicationDbContext db, Microsoft.AspNetCore.Identity.UserManager<Microsoft.AspNetCore.Identity.IdentityUser> userManager) : base(db, userManager) { }
         public async Task<IActionResult> ShowNotificationsList()
         {
-            var currentUser = await _userManager.GetUserAsync(User);
-            var notifications = _db.notifications.Where(n => n.userId == currentUser.Id);
+            var currentUser = await userManager.GetUserAsync(User);
+            var notifications = db.notifications.Where(n => n.userId == currentUser.Id);
             NotificationsViewModel notificationsViewModel = new NotificationsViewModel() { notifications = notifications };
 
             return View(notificationsViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult RejectNotification(string notificationId)
+        {
+            var removedNotification = db.notifications.Find(notificationId);
+            db.notifications.Remove(removedNotification);
+            db.SaveChanges();
+
+            return RedirectToAction("ShowNotificationsList");
         }
     }
 }

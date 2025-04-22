@@ -11,7 +11,7 @@ namespace MCE_ASP_NET_MVC.Controllers
 
         public async Task<IActionResult> ShowFriendList()
         {
-            var currentUser = await _userManager.GetUserAsync(User);
+            var currentUser = await userManager.GetUserAsync(User);
 
             FriendsViewModel friendsViewModel = new FriendsViewModel() { currentUserFriendshipСode = currentUser.Id };
 
@@ -21,7 +21,7 @@ namespace MCE_ASP_NET_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> AddFriendRequest(string friendshipСode)
         {
-            var currentUser = await _userManager.GetUserAsync(User);
+            var currentUser = await userManager.GetUserAsync(User);
             friendshipСode = friendshipСode.ToLower().Trim();
 
             if (friendshipСode != currentUser.Id)
@@ -36,8 +36,8 @@ namespace MCE_ASP_NET_MVC.Controllers
                     newFriendName = currentUser.UserName 
                 };
                 
-                _db.notifications.Add(newNotification);
-                _db.SaveChanges();
+                db.notifications.Add(newNotification);
+                db.SaveChanges();
             }
 
             return RedirectToAction("ShowFriendList");

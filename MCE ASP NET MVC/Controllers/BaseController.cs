@@ -5,13 +5,13 @@ namespace MCE_ASP_NET_MVC.Controllers
 {
     public abstract class BaseController : Controller
     {
-        private protected readonly Microsoft.AspNetCore.Identity.UserManager<Microsoft.AspNetCore.Identity.IdentityUser> _userManager;
-        private protected readonly ApplicationDbContext _db;
+        private protected readonly Microsoft.AspNetCore.Identity.UserManager<Microsoft.AspNetCore.Identity.IdentityUser> userManager;
+        private protected readonly ApplicationDbContext db;
 
-        public BaseController(ApplicationDbContext db, Microsoft.AspNetCore.Identity.UserManager<Microsoft.AspNetCore.Identity.IdentityUser> userManager)
+        public BaseController(ApplicationDbContext _db, Microsoft.AspNetCore.Identity.UserManager<Microsoft.AspNetCore.Identity.IdentityUser> _userManager)
         {
-            _db = db;
-            _userManager = userManager;
+            db = _db;
+            userManager = _userManager;
         }
     }
 }
