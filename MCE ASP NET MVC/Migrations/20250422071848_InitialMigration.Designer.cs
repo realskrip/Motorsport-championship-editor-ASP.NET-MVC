@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MCE_ASP_NET_MVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250421133957_MainMigration")]
-    partial class MainMigration
+    [Migration("20250422071848_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,11 +40,8 @@ namespace MCE_ASP_NET_MVC.Migrations
 
             modelBuilder.Entity("MCE_ASP_NET_MVC.models.Notification", b =>
                 {
-                    b.Property<long>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("id"));
+                    b.Property<string>("id")
+                        .HasColumnType("text");
 
                     b.Property<string>("notification")
                         .IsRequired()

@@ -5,10 +5,11 @@
 <body>
     <p>My friendship code: @Model.currentUserFriendshipСode</p>
 
-    <form>
+    <form asp-controller="Friends" asp-action="AddFriendRequest" method="post">
         <p>Enter your friend's friendship code to add him as a friend</p>
-        <input type="text">
-        <input type="button" value="Send a friend request">
+        
+        <input name="friendshipСode" type="text" required>
+        <input type="submit" value="Send a friend request">
     </form>
 </body>
 </html>
