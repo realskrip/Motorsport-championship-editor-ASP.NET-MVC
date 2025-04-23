@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35309.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCE ASP NET MVC", "MCE ASP NET MVC\MCE ASP NET MVC.csproj", "{B7164134-76DC-42B6-8DEE-DFBB31D199B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCE ASP NET MVC.Tests", "MCE ASP NET MVC.Tests\MCE ASP NET MVC.Tests.csproj", "{6C8F1881-8F1D-4A8C-A2F7-DFF61D29144C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B7164134-76DC-42B6-8DEE-DFBB31D199B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7164134-76DC-42B6-8DEE-DFBB31D199B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7164134-76DC-42B6-8DEE-DFBB31D199B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C8F1881-8F1D-4A8C-A2F7-DFF61D29144C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C8F1881-8F1D-4A8C-A2F7-DFF61D29144C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C8F1881-8F1D-4A8C-A2F7-DFF61D29144C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C8F1881-8F1D-4A8C-A2F7-DFF61D29144C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
