@@ -1,4 +1,5 @@
 using MCE_ASP_NET_MVC.Data;
+using MCE_ASP_NET_MVC.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,6 +28,10 @@ namespace MCE_ASP_NET_MVC
                     options.Password.RequireUppercase = false;
                     options.Password.RequireLowercase = false;
                 }).AddEntityFrameworkStores<ApplicationDbContext>();
+
+            // Added custom services
+            builder.Services.AddScoped<FriendsService>();
+            builder.Services.AddScoped<NotificationsService>();
 
             var app = builder.Build();
 

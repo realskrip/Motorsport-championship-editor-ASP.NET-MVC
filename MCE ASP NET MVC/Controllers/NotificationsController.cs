@@ -1,28 +1,25 @@
-﻿using MCE_ASP_NET_MVC.Data;
-using MCE_ASP_NET_MVC.ViewModels;
+﻿using MCE_ASP_NET_MVC.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MCE_ASP_NET_MVC.Controllers
 {
-    public class NotificationsController : BaseController
+    public class NotificationsController : Controller
     {
-        public NotificationsController(ApplicationDbContext db, Microsoft.AspNetCore.Identity.UserManager<Microsoft.AspNetCore.Identity.IdentityUser> userManager) : base(db, userManager) { }
+        private readonly NotificationsService notificationsService;
+        public NotificationsController(NotificationsService _notificationsService)
+        {
+            notificationsService = _notificationsService;
+        }
+
         public async Task<IActionResult> ShowNotificationsList()
         {
-            var currentUser = await userManager.GetUserAsync(User);
-            var notifications = db.notifications.Where(n => n.userId == currentUser.Id);
-            NotificationsViewModel notificationsViewModel = new NotificationsViewModel() { notifications = notifications };
-
-            return View(notificationsViewModel);
+            return View(await notificationsService.ShowNotificationsList(User));
         }
 
         [HttpPost]
         public IActionResult RejectNotification(string notificationId)
         {
-            var removedNotification = db.notifications.Find(notificationId);
-            db.notifications.Remove(removedNotification);
-            db.SaveChanges();
-
+            notificationsService.RejectNotification(notificationId);
             return RedirectToAction("ShowNotificationsList");
         }
     }
