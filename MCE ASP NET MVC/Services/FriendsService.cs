@@ -3,6 +3,7 @@ using MCE_ASP_NET_MVC.models;
 using MCE_ASP_NET_MVC.Models;
 using MCE_ASP_NET_MVC.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace MCE_ASP_NET_MVC.Services
@@ -20,7 +21,25 @@ namespace MCE_ASP_NET_MVC.Services
         public async Task<FriendsViewModel> ShowFriendListAsync(ClaimsPrincipal currentUserPrincipal)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
-            FriendsViewModel friendsViewModel = new FriendsViewModel() { currentUserFriendshipСode = currentUser.Id };
+            List<UserFriend> userFriends = await db.user_friends.Where(f => f.userId == currentUser.Id).ToListAsync();
+            
+            FriendsViewModel friendsViewModel = new FriendsViewModel()
+            {
+                currentUserFriendshipСode = currentUser.Id,
+                friends = new List<Friend>()
+            };
+
+            if (userFriends != null && userFriends.Any() == true)
+            {
+                foreach (var item in userFriends)
+                {
+                    Friend friend = new Friend();
+                    friend.friendId = item.friendId;
+                    friend.friendName = db.Users.Where(u => u.Id == item.friendId).FirstOrDefault().UserName;
+                    friendsViewModel.friends.Add(friend);
+                }
+            }
+
             return friendsViewModel;
         }
 
@@ -58,11 +77,18 @@ namespace MCE_ASP_NET_MVC.Services
                     friendId = newFriendId
                 };
 
+                UserFriend mutualAddition = new UserFriend()
+                {
+                    userId = newFriendId,
+                    friendId = currentUser.Id
+                };
+
                 using (var transaction = db.Database.BeginTransaction())
                 {
                     try
                     {
                         db.user_friends.Add(newFriend);
+                        db.user_friends.Add(mutualAddition);
                         notificationsService.RejectNotification(notificationId);
                         db.SaveChanges();
                         transaction.Commit();

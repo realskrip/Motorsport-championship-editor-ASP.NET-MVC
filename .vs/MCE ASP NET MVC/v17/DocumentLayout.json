@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "D:\\Projects\\MCE ASP NET MVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\views\\notifications\\shownotificationslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\notifications\\shownotificationslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\controllers\\friendscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\controllers\\friendscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\services\\friendsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\services\\friendsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\models\\userfriend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\models\\userfriend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\views\\friends\\showfriendlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\friends\\showfriendlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|d:\\projects\\mce asp net mvc\\mce asp net mvc\\viewmodels\\friendsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\viewmodels\\friendsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,80 +38,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ShowNotificationsList.cshtml",
-              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\Notifications\\ShowNotificationsList.cshtml",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Notifications\\ShowNotificationsList.cshtml",
-              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\Notifications\\ShowNotificationsList.cshtml",
-              "RelativeToolTip": "MCE ASP NET MVC\\Views\\Notifications\\ShowNotificationsList.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-05T07:00:04.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "MCE ASP NET MVC\\Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-05T06:43:48.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NotificationsController.cs",
-              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Controllers\\NotificationsController.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Controllers\\NotificationsController.cs",
-              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Controllers\\NotificationsController.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\Controllers\\NotificationsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABDAAAAAAAAAA==",
+              "Title": "FriendsViewModel.cs",
+              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\ViewModels\\FriendsViewModel.cs",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\ViewModels\\FriendsViewModel.cs",
+              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\ViewModels\\FriendsViewModel.cs",
+              "RelativeToolTip": "MCE ASP NET MVC\\ViewModels\\FriendsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T06:44:15.989Z",
+              "WhenOpened": "2025-05-05T07:55:58.754Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FriendsController.cs",
-              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Controllers\\FriendsController.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Controllers\\FriendsController.cs",
-              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Controllers\\FriendsController.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\Controllers\\FriendsController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T05:51:55.149Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "FriendsService.cs",
               "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Services\\FriendsService.cs",
               "RelativeDocumentMoniker": "MCE ASP NET MVC\\Services\\FriendsService.cs",
               "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Services\\FriendsService.cs",
               "RelativeToolTip": "MCE ASP NET MVC\\Services\\FriendsService.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAqwDsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAqwBwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T05:52:03.435Z",
+              "WhenOpened": "2025-05-05T07:47:49.137Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserFriend.cs",
-              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\models\\UserFriend.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\models\\UserFriend.cs",
-              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\models\\UserFriend.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\models\\UserFriend.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T05:55:48.807Z",
+              "DocumentIndex": 1,
+              "Title": "ShowFriendList.cshtml",
+              "DocumentMoniker": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\Friends\\ShowFriendList.cshtml",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Friends\\ShowFriendList.cshtml",
+              "ToolTip": "D:\\Projects\\MCE ASP NET MVC\\MCE ASP NET MVC\\Views\\Friends\\ShowFriendList.cshtml",
+              "RelativeToolTip": "MCE ASP NET MVC\\Views\\Friends\\ShowFriendList.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-05T07:32:05.209Z",
               "EditorCaption": ""
             }
           ]
