@@ -19,6 +19,10 @@
         @foreach (var item in Model.friends)
         {
             <p>@item.friendId     @item.friendName</p>
+            <form asp-controller="Friends" asp-action="RemoveFriend" method="post">
+                <input type="hidden" name="friendId" value="@item.friendId" />
+                <input type="submit" value="Remove">
+            </form>
         }
     }
 </body>

@@ -22,7 +22,7 @@ namespace MCE_ASP_NET_MVC.Services
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
             List<UserFriend> userFriends = await db.user_friends.Where(f => f.userId == currentUser.Id).ToListAsync();
-            
+
             FriendsViewModel friendsViewModel = new FriendsViewModel()
             {
                 currentUserFriendshipСode = currentUser.Id,
@@ -97,6 +97,38 @@ namespace MCE_ASP_NET_MVC.Services
                     {
                         transaction.Rollback();
                     }
+                }
+            }
+        }
+
+        public async Task RemoveFriend(ClaimsPrincipal currentUserPrincipal, string friendId)
+        {
+            var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
+
+            using (var transaction = db.Database.BeginTransaction())
+            {
+                UserFriend newFriend = new UserFriend()
+                {
+                    userId = currentUser.Id,
+                    friendId = friendId
+                };
+
+                UserFriend mutualRemoved = new UserFriend()
+                {
+                    userId = friendId,
+                    friendId = currentUser.Id
+                };
+
+                try
+                {
+                    db.user_friends.Remove(newFriend);
+                    db.user_friends.Remove(mutualRemoved);
+                    db.SaveChanges();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
                 }
             }
         }

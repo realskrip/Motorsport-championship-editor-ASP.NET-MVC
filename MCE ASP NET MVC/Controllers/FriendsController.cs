@@ -29,5 +29,12 @@ namespace MCE_ASP_NET_MVC.Controllers
             await friendService.AddFriendAsync(User, notificationId, newFriendId);
             return RedirectToAction("ShowNotificationsList", "Notifications");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveFriend(string friendId)
+        {
+            await friendService.RemoveFriend(User, friendId);
+            return RedirectToAction("ShowFriendList");
+        }
     }
 }
