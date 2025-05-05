@@ -163,7 +163,10 @@ namespace MCE_ASP_NET_MVC.Migrations
                 {
                     id = table.Column<string>(type: "text", nullable: false),
                     userId = table.Column<string>(type: "text", nullable: false),
-                    notification = table.Column<string>(type: "text", nullable: false)
+                    notification = table.Column<string>(type: "text", nullable: false),
+                    type = table.Column<int>(type: "integer", nullable: false),
+                    newFriendId = table.Column<string>(type: "text", nullable: true),
+                    newFriendName = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

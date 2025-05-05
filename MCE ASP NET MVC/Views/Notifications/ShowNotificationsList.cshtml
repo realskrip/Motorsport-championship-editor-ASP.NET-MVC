@@ -5,7 +5,11 @@
     @foreach (var item in Model.notifications)
     {
         @item.notification
-
+        <form asp-controller="Friends" asp-action="AddFriend" method="post">
+            <input type="hidden" name="notificationId" value="@item.id" />
+            <input type="hidden" name="newFriendId" value="@item.newFriendId" />
+            <input type="submit" value="Accept" />
+        </form>
         <form asp-controller="Notifications" asp-action="RejectNotification" method="post">
             <input type="hidden" name="notificationId" value="@item.id" />
             <input type="submit" value="Reject">

@@ -11,16 +11,16 @@ namespace MCE_ASP_NET_MVC.Controllers
             notificationsService = _notificationsService;
         }
 
-        public async Task<IActionResult> ShowNotificationsList()
+        public async Task<IActionResult> ShowNotificationsListAsync()
         {
-            return View(await notificationsService.ShowNotificationsList(User));
+            return View("ShowNotificationsList", await notificationsService.ShowNotificationsListAsync(User));
         }
 
         [HttpPost]
         public IActionResult RejectNotification(string notificationId)
         {
             notificationsService.RejectNotification(notificationId);
-            return RedirectToAction("ShowNotificationsList");
+            return RedirectToAction("ShowNotificationsListAsync");
         }
     }
 }
