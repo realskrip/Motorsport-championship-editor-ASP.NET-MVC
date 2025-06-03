@@ -1,4 +1,5 @@
-﻿using MCE_ASP_NET_MVC.Data;
+﻿using Azure.Core;
+using MCE_ASP_NET_MVC.Data;
 using MCE_ASP_NET_MVC.models;
 using MCE_ASP_NET_MVC.Models;
 using MCE_ASP_NET_MVC.ViewModels;
@@ -45,10 +46,13 @@ namespace MCE_ASP_NET_MVC.Services
 
         public async Task SendFriendRequestAsync(ClaimsPrincipal currentUserPrincipal, string friendshipСode)
         {
-            var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
             friendshipСode = friendshipСode.ToLower().Trim();
+            
+            var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
+            bool isRepeatRequest = db.notifications.Where(n => n.userId == friendshipСode && n.newFriendId == currentUser.Id).Any();
+            bool isFriend = db.user_friends.Where(f => f.userId == currentUser.Id && f.friendId == friendshipСode).Any();
 
-            if (friendshipСode != currentUser.Id)
+            if (friendshipСode != currentUser.Id && isRepeatRequest == false && isFriend == false)
             {
                 Notification newNotification = new Notification()
                 {

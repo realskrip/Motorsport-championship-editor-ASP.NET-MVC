@@ -20,7 +20,7 @@ namespace MCE_ASP_NET_MVC.Controllers
         public IActionResult RejectNotification(string notificationId)
         {
             notificationsService.RejectNotification(notificationId);
-            return RedirectToAction("ShowNotificationsListAsync");
+            return RedirectToAction("ShowNotificationsList");
         }
     }
 }
