@@ -7,10 +7,13 @@
     <table>
         <tr>
             <td>
-                <p><a asp-controller="Notifications" asp-action="ShowNotificationsList">Notifications</a></p>
+                <p><a asp-controller="Championships" asp-action="ShowChampionshipsList">Championships</a></p>
             </td>
             <td>
                 <p><a asp-controller="Friends" asp-action="ShowFriendList">Friends</a></p>
+            </td>
+            <td>
+                <p><a asp-controller="Notifications" asp-action="ShowNotificationsList">Notifications</a></p>
             </td>
             <td>
                 <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">

@@ -32,6 +32,7 @@ namespace MCE_ASP_NET_MVC
             // Added custom services
             builder.Services.AddScoped<FriendsService>();
             builder.Services.AddScoped<NotificationsService>();
+            builder.Services.AddScoped<ChampionshipsService>();
 
             var app = builder.Build();
 
