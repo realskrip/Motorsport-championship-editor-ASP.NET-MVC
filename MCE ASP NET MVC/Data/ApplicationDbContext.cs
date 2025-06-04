@@ -10,6 +10,7 @@ namespace MCE_ASP_NET_MVC.Data
     {
         public DbSet<UserFriend> user_friends { get; set; } = null!;
         public DbSet<Notification> notifications { get; set; } = null!;
+        public DbSet<Championship> championships { get; set; } = null!;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
@@ -17,13 +18,17 @@ namespace MCE_ASP_NET_MVC.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            // user_friend table
+            // user_friends table
             builder.Entity<UserFriend>().HasKey(m => new { m.userId, m.friendId });
             builder.Entity<UserFriend>().HasOne<IdentityUser>().WithMany().HasForeignKey(m => m.userId); // IdentityUser == AspNetUser table
 
             // notifications table
             builder.Entity<Notification>().HasKey(m => new { m.id });
             builder.Entity<Notification>().HasOne<IdentityUser>().WithMany().HasForeignKey(m => m.userId);
+
+            // championships table
+            builder.Entity<Championship>().HasKey(m => new { m.Id });
+            builder.Entity<Championship>().HasOne<IdentityUser>().WithMany().HasForeignKey(m => m.OwnerId);
 
             base.OnModelCreating(builder);
         }
