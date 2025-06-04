@@ -1,5 +1,6 @@
 ﻿using MCE_ASP_NET_MVC.Data;
 using MCE_ASP_NET_MVC.models;
+using MCE_ASP_NET_MVC.Models;
 using MCE_ASP_NET_MVC.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
@@ -20,6 +21,17 @@ namespace MCE_ASP_NET_MVC.Services
             ChampionshipsViewModel championshipsViewModel = new ChampionshipsViewModel() { Championships = championships };
 
             return championshipsViewModel;
+        }
+
+        public void RemoveChampionship(string id)
+        {
+            Championship? championship = db.championships.Where(c => c.Id == id).FirstOrDefault();
+
+            if (championship != null)
+            {
+                db.championships.Remove(championship);
+                db.SaveChanges();
+            }
         }
     }
 }

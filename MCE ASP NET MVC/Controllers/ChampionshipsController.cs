@@ -15,5 +15,12 @@ namespace MCE_ASP_NET_MVC.Controllers
         {
             return View(await championshipService.ShowChampionshipsListAsync(User));
         }
+
+        [HttpPost]
+        public IActionResult RemoveChampionship(string id)
+        {
+            championshipService.RemoveChampionship(id);
+            return RedirectToAction("ShowChampionshipsList");
+        }
     }
 }
