@@ -3,6 +3,19 @@
 <!DOCTYPE html>
 <html>
 <body>
+    <p>Create championship</p>
+    
     <p>Championships:</p>
+    @if (Model.Championships != null && Model.Championships.Count() > 0)
+    {
+        @foreach (var item in Model.Championships)
+        {
+            <p>@item.Name</p>
+            <form asp-controller="Championships" asp-action="RemoveChampionship" method="post">
+                <input type="hidden" name="id" value="@item.Id" />
+                <input type="submit" value="Remove">
+            </form>
+        }
+    }
 </body>
 </html>
