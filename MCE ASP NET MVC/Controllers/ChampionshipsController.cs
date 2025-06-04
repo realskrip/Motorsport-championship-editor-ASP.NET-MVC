@@ -22,5 +22,17 @@ namespace MCE_ASP_NET_MVC.Controllers
             championshipService.RemoveChampionship(id);
             return RedirectToAction("ShowChampionshipsList");
         }
+
+        public IActionResult ShowCreateChampionshipForm()
+        {
+            return View("CreateChampionshipForm");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateChampionshipAsync(string name, string? racingRegulations, string pointsAwardingRules)
+        {
+            await championshipService.CreateChampionshipAsync(User, name, racingRegulations, pointsAwardingRules);
+            return RedirectToAction("ShowChampionshipsList");
+        }
     }
 }

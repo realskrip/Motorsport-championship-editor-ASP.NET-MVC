@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <p>Create championship</p>
+    <a asp-controller="Championships" asp-action="ShowCreateChampionshipForm">Create championship</a>
     
     <p>Championships:</p>
     @if (Model.Championships != null && Model.Championships.Count() > 0)

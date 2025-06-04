@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <form asp-controller="Championships" asp-action="CreateChampionship" method="post">
+        <p>Name</p>
+        <input name="name" type="text" required>
+        
+        <p>Racing regulations</p>
+        <input name="racingRegulations" type="text">
+        
+        <p>Points awarding rules</p>
+        <input name="pointsAwardingRules" type="text" required>
+        <input type="submit" value="Create championship">
+    </form>
+</body>
+</html>
