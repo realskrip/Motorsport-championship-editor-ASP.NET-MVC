@@ -15,7 +15,8 @@
         {
             <p>@item.Name</p>
             <form asp-controller="Championships" asp-action="RemoveGrandPrix" method="post">
-                <input type="hidden" name="id" value="@item.Id" />
+                <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
+                <input type="hidden" name="grandPrixId" value="@item.Id" />
                 <input type="submit" value="Remove">
             </form>
         }

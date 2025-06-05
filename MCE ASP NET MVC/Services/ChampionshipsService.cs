@@ -48,6 +48,17 @@ namespace MCE_ASP_NET_MVC.Services
             }
         }
 
+        public void RemoveGrandPrix(string grandPrixId)
+        {
+            GrandPrix? grandPrix = db.grandprixes.Where(gp => gp.Id == grandPrixId).FirstOrDefault();
+
+            if (grandPrix != null)
+            {
+                db.grandprixes.Remove(grandPrix);
+                db.SaveChanges();
+            }
+        }
+
         public async Task CreateChampionshipAsync(ClaimsPrincipal currentUserPrincipal, string name, string? racingRegulations, string pointsAwardingRules)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);

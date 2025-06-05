@@ -1,4 +1,5 @@
-﻿using MCE_ASP_NET_MVC.Services;
+﻿using MCE_ASP_NET_MVC.models;
+using MCE_ASP_NET_MVC.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MCE_ASP_NET_MVC.Controllers
@@ -26,6 +27,13 @@ namespace MCE_ASP_NET_MVC.Controllers
         {
             championshipService.RemoveChampionship(id);
             return RedirectToAction("ShowChampionshipsList");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveGrandPrix(string championshipId, string grandPrixId)
+        {
+            championshipService.RemoveGrandPrix(grandPrixId);
+            return View("ShowGrandPrixsList", await championshipService.ShowGrandPrixsListAsync(User, championshipId));
         }
 
         public IActionResult ShowCreateChampionshipForm()
