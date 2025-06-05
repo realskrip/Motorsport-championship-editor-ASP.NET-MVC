@@ -39,12 +39,27 @@ namespace MCE_ASP_NET_MVC.Services
 
         public void RemoveChampionship(string id)
         {
+            List<GrandPrix> grandPrixes = db.grandprixes.Where(gp => gp.ChampionshipId == id).ToList();
             Championship? championship = db.championships.Where(c => c.Id == id).FirstOrDefault();
 
-            if (championship != null)
+            using (var transaction = db.Database.BeginTransaction())
             {
-                db.championships.Remove(championship);
-                db.SaveChanges();
+                try
+                {
+                    if (grandPrixes.Count() > 0)
+                        foreach (var item in grandPrixes)
+                            RemoveGrandPrix(item.Id);
+
+                    if (championship != null)
+                        db.championships.Remove(championship);
+
+                    db.SaveChanges();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                }
             }
         }
 

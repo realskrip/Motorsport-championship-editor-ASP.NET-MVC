@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\services\\championshipsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\services\\friendsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\services\\friendsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\controllers\\championshipscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\controllers\\championshipscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,7 +46,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "FriendsService.cs",
+              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Services\\FriendsService.cs",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Services\\FriendsService.cs",
+              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Services\\FriendsService.cs",
+              "RelativeToolTip": "MCE ASP NET MVC\\Services\\FriendsService.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T08:39:02.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ShowChampionshipsList.cshtml",
               "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Views\\Championships\\ShowChampionshipsList.cshtml",
               "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Championships\\ShowChampionshipsList.cshtml",
@@ -50,12 +67,11 @@
               "RelativeToolTip": "MCE ASP NET MVC\\Views\\Championships\\ShowChampionshipsList.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-05T04:36:27.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T04:36:27.585Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ShowGrandPrixsList.cshtml",
               "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Views\\Championships\\ShowGrandPrixsList.cshtml",
               "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Championships\\ShowGrandPrixsList.cshtml",
@@ -63,12 +79,11 @@
               "RelativeToolTip": "MCE ASP NET MVC\\Views\\Championships\\ShowGrandPrixsList.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-05T03:35:23.853Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T03:35:23.853Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CreateGrandPrixForm.cshtml",
               "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Views\\Championships\\CreateGrandPrixForm.cshtml",
               "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Championships\\CreateGrandPrixForm.cshtml",
@@ -76,12 +91,11 @@
               "RelativeToolTip": "MCE ASP NET MVC\\Views\\Championships\\CreateGrandPrixForm.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-05T04:12:39.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T04:12:39.794Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ChampionshipsController.cs",
               "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Controllers\\ChampionshipsController.cs",
               "RelativeDocumentMoniker": "MCE ASP NET MVC\\Controllers\\ChampionshipsController.cs",
@@ -89,8 +103,7 @@
               "RelativeToolTip": "MCE ASP NET MVC\\Controllers\\ChampionshipsController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAkwCEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T03:48:03.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T03:48:03.761Z"
             },
             {
               "$type": "Document",
@@ -100,7 +113,7 @@
               "RelativeDocumentMoniker": "MCE ASP NET MVC\\Services\\ChampionshipsService.cs",
               "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Services\\ChampionshipsService.cs",
               "RelativeToolTip": "MCE ASP NET MVC\\Services\\ChampionshipsService.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAswCoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAAGQAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T03:48:25.696Z",
               "EditorCaption": ""
