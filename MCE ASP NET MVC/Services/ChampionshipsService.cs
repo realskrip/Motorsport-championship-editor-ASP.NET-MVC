@@ -22,6 +22,21 @@ namespace MCE_ASP_NET_MVC.Services
             return championshipsViewModel;
         }
 
+        public async Task<GrandPrixViewModel> ShowGrandPrixsListAsync(ClaimsPrincipal currentUserPrincipal, string championshipId)
+        {
+            var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
+
+            List<GrandPrix> grandPrixes = db.grandprixes.Where(g => g.ChampionshipId == championshipId).ToList();
+
+            GrandPrixViewModel grandPrixViewModel = new GrandPrixViewModel()
+            {
+                ChampionshipId = championshipId,
+                GrandPrixes = grandPrixes
+            };
+
+            return grandPrixViewModel;
+        }
+
         public void RemoveChampionship(string id)
         {
             Championship? championship = db.championships.Where(c => c.Id == id).FirstOrDefault();
@@ -47,6 +62,27 @@ namespace MCE_ASP_NET_MVC.Services
             };
 
             db.championships.Add(newChampionship);
+            db.SaveChanges();
+        }
+
+        public async Task CreateGrandPrixAsync(ClaimsPrincipal currentUserPrincipal, string championshipId, string name, string game, string discipline, string carClass, string track, DateTime? dateTime, string? description)
+        {
+            var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
+
+            GrandPrix newGrandPrix = new GrandPrix()
+            {
+                Id = Guid.NewGuid().ToString(),
+                ChampionshipId = championshipId.Trim(),
+                Name = name.Trim(),
+                Game = game.Trim(),
+                Discipline = discipline.Trim(),
+                CarClass = carClass.Trim(),
+                Track = track.Trim(),
+                Date = dateTime,
+                Description = description
+            };
+
+            db.grandprixes.Add(newGrandPrix);
             db.SaveChanges();
         }
     }

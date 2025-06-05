@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MCE_ASP_NET_MVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250604060344_MigrationUpdate1")]
-    partial class MigrationUpdate1
+    [Migration("20250605052517_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,6 +63,48 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.HasIndex("OwnerId");
 
                     b.ToTable("championships");
+                });
+
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.GrandPrix", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("CarClass")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ChampionshipId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("Date")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Discipline")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Game")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Track")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ChampionshipId");
+
+                    b.ToTable("grandprixes");
                 });
 
             modelBuilder.Entity("MCE_ASP_NET_MVC.models.Notification", b =>
@@ -308,6 +350,15 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.GrandPrix", b =>
+                {
+                    b.HasOne("MCE_ASP_NET_MVC.models.Championship", null)
+                        .WithMany()
+                        .HasForeignKey("ChampionshipId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

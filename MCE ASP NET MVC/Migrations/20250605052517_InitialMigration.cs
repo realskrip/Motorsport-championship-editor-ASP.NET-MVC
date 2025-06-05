@@ -158,6 +158,27 @@ namespace MCE_ASP_NET_MVC.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "championships",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "text", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    RacingRegulations = table.Column<string>(type: "text", nullable: true),
+                    OwnerId = table.Column<string>(type: "text", nullable: false),
+                    PointsAwardingRules = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_championships", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_championships_AspNetUsers_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "notifications",
                 columns: table => new
                 {
@@ -193,6 +214,31 @@ namespace MCE_ASP_NET_MVC.Migrations
                         name: "FK_user_friends_AspNetUsers_userId",
                         column: x => x.userId,
                         principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "grandprixes",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "text", nullable: false),
+                    ChampionshipId = table.Column<string>(type: "text", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Game = table.Column<string>(type: "text", nullable: false),
+                    Discipline = table.Column<string>(type: "text", nullable: false),
+                    CarClass = table.Column<string>(type: "text", nullable: false),
+                    Track = table.Column<string>(type: "text", nullable: false),
+                    Date = table.Column<DateTime>(type: "date", nullable: true),
+                    Description = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_grandprixes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_grandprixes_championships_ChampionshipId",
+                        column: x => x.ChampionshipId,
+                        principalTable: "championships",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -235,6 +281,16 @@ namespace MCE_ASP_NET_MVC.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_championships_OwnerId",
+                table: "championships",
+                column: "OwnerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_grandprixes_ChampionshipId",
+                table: "grandprixes",
+                column: "ChampionshipId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_notifications_userId",
                 table: "notifications",
                 column: "userId");
@@ -259,6 +315,9 @@ namespace MCE_ASP_NET_MVC.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "grandprixes");
+
+            migrationBuilder.DropTable(
                 name: "notifications");
 
             migrationBuilder.DropTable(
@@ -266,6 +325,9 @@ namespace MCE_ASP_NET_MVC.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "championships");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

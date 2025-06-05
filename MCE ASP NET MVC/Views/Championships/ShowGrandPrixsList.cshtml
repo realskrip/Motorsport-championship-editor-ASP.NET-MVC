@@ -1,0 +1,24 @@
+﻿@model MCE_ASP_NET_MVC.ViewModels.GrandPrixViewModel
+
+<!DOCTYPE html>
+<html>
+<body>
+    <form asp-controller="Championships" asp-action="ShowCreateGrandPrixForm" method="post">
+        <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
+        <input type="submit" value="Add Grand prix">
+    </form>
+
+    <p>Grand prixs:</p>
+    @if (Model.GrandPrixes != null && Model.GrandPrixes.Count() > 0)
+    {
+        @foreach (var item in Model.GrandPrixes)
+        {
+            <p>@item.Name</p>
+            <form asp-controller="Championships" asp-action="RemoveGrandPrix" method="post">
+                <input type="hidden" name="id" value="@item.Id" />
+                <input type="submit" value="Remove">
+            </form>
+        }
+    }
+</body>
+</html>

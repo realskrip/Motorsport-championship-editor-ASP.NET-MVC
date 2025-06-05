@@ -11,7 +11,7 @@ namespace MCE_ASP_NET_MVC.Data
         public DbSet<UserFriend> user_friends { get; set; } = null!;
         public DbSet<Notification> notifications { get; set; } = null!;
         public DbSet<Championship> championships { get; set; } = null!;
-        public DbSet<GranPrix> granprixes { get; set; } = null!;
+        public DbSet<GrandPrix> grandprixes { get; set; } = null!;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
@@ -31,9 +31,9 @@ namespace MCE_ASP_NET_MVC.Data
             builder.Entity<Championship>().HasKey(a => new { a.Id });
             builder.Entity<Championship>().HasOne<IdentityUser>().WithMany().HasForeignKey(a => a.OwnerId);
 
-            // granprixes table
-            builder.Entity<GranPrix>().HasKey(a => new { a.Id });
-            builder.Entity<GranPrix>().HasOne<Championship>().WithMany().HasForeignKey(a => a.ChampionshipId);
+            // grandprixes table
+            builder.Entity<GrandPrix>().HasKey(a => new { a.Id });
+            builder.Entity<GrandPrix>().HasOne<Championship>().WithMany().HasForeignKey(a => a.ChampionshipId);
 
             base.OnModelCreating(builder);
         }

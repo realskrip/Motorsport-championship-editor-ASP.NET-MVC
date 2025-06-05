@@ -62,7 +62,7 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.ToTable("championships");
                 });
 
-            modelBuilder.Entity("MCE_ASP_NET_MVC.models.GranPrix", b =>
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.GrandPrix", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
@@ -76,7 +76,7 @@ namespace MCE_ASP_NET_MVC.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("Date")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("date");
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
@@ -101,7 +101,7 @@ namespace MCE_ASP_NET_MVC.Migrations
 
                     b.HasIndex("ChampionshipId");
 
-                    b.ToTable("granprixes");
+                    b.ToTable("grandprixes");
                 });
 
             modelBuilder.Entity("MCE_ASP_NET_MVC.models.Notification", b =>
@@ -351,7 +351,7 @@ namespace MCE_ASP_NET_MVC.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MCE_ASP_NET_MVC.models.GranPrix", b =>
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.GrandPrix", b =>
                 {
                     b.HasOne("MCE_ASP_NET_MVC.models.Championship", null)
                         .WithMany()

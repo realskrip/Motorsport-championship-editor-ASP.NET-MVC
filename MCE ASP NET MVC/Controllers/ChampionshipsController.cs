@@ -16,6 +16,11 @@ namespace MCE_ASP_NET_MVC.Controllers
             return View(await championshipService.ShowChampionshipsListAsync(User));
         }
 
+        public async Task<IActionResult> ShowGrandPrixsListAsync(string championshipId)
+        {
+            return View(await championshipService.ShowGrandPrixsListAsync(User, championshipId));
+        }
+
         [HttpPost]
         public IActionResult RemoveChampionship(string id)
         {
@@ -33,6 +38,19 @@ namespace MCE_ASP_NET_MVC.Controllers
         {
             await championshipService.CreateChampionshipAsync(User, name, racingRegulations, pointsAwardingRules);
             return RedirectToAction("ShowChampionshipsList");
+        }
+
+        public IActionResult ShowCreateGrandPrixForm(string championshipId)
+        {
+            ViewBag.championshipId = championshipId;
+            return View("CreateGrandPrixForm");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateGrandPrixAsync(string championshipId, string name, string game, string discipline, string carClass, string track, DateTime? dateTime, string? description)
+        {
+            await championshipService.CreateGrandPrixAsync(User, championshipId, name, game, discipline, carClass, track, dateTime, description);
+            return View("ShowGrandPrixsList", await championshipService.ShowGrandPrixsListAsync(User, championshipId));
         }
     }
 }

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <form asp-controller="Championships" asp-action="CreateGrandPrix" method="post">
+        <p>Name</p>
+        <input name="name" type="text" required>
+
+        <p>Game</p>
+        <input name="game" type="text" required>
+
+        <p>Discipline</p>
+        <input name="discipline" type="text" required>
+        
+        <p>Car class</p>
+        <input name="carClass" type="text" required>
+        
+        <p>Track</p>
+        <input name="track" type="text" required>
+        
+        <p>Time of the event</p>
+        <input name="dateTime" type="datetime">
+        
+        <p>Description</p>
+        <input name="description" type="text">
+
+        <input type="hidden" name="championshipId" value="@ViewBag.championshipId" />
+        <input type="submit" value="Add grand prix">
+    </form>
+</body>
+</html>
