@@ -11,6 +11,7 @@ namespace MCE_ASP_NET_MVC.Data
         public DbSet<UserFriend> user_friends { get; set; } = null!;
         public DbSet<Notification> notifications { get; set; } = null!;
         public DbSet<Championship> championships { get; set; } = null!;
+        public DbSet<GranPrix> granprixes { get; set; } = null!;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
@@ -19,16 +20,20 @@ namespace MCE_ASP_NET_MVC.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             // user_friends table
-            builder.Entity<UserFriend>().HasKey(m => new { m.userId, m.friendId });
-            builder.Entity<UserFriend>().HasOne<IdentityUser>().WithMany().HasForeignKey(m => m.userId); // IdentityUser == AspNetUser table
+            builder.Entity<UserFriend>().HasKey(a => new { a.userId, a.friendId });
+            builder.Entity<UserFriend>().HasOne<IdentityUser>().WithMany().HasForeignKey(a => a.userId); // IdentityUser == AspNetUser table
 
             // notifications table
-            builder.Entity<Notification>().HasKey(m => new { m.id });
-            builder.Entity<Notification>().HasOne<IdentityUser>().WithMany().HasForeignKey(m => m.userId);
+            builder.Entity<Notification>().HasKey(a => new { a.id });
+            builder.Entity<Notification>().HasOne<IdentityUser>().WithMany().HasForeignKey(a => a.userId);
 
             // championships table
-            builder.Entity<Championship>().HasKey(m => new { m.Id });
-            builder.Entity<Championship>().HasOne<IdentityUser>().WithMany().HasForeignKey(m => m.OwnerId);
+            builder.Entity<Championship>().HasKey(a => new { a.Id });
+            builder.Entity<Championship>().HasOne<IdentityUser>().WithMany().HasForeignKey(a => a.OwnerId);
+
+            // granprixes table
+            builder.Entity<GranPrix>().HasKey(a => new { a.Id });
+            builder.Entity<GranPrix>().HasOne<Championship>().WithMany().HasForeignKey(a => a.ChampionshipId);
 
             base.OnModelCreating(builder);
         }

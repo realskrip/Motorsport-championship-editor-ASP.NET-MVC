@@ -1,6 +1,5 @@
 ﻿using MCE_ASP_NET_MVC.Data;
 using MCE_ASP_NET_MVC.models;
-using MCE_ASP_NET_MVC.Models;
 using MCE_ASP_NET_MVC.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
