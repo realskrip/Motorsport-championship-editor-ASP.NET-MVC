@@ -1,4 +1,4 @@
-﻿@model MCE_ASP_NET_MVC.ViewModels.ChampionshipsViewModel
+﻿@model MCE_ASP_NET_MVC.ViewModels.ChampionshipsListViewModel
 
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
     {
         @foreach (var item in Model.Championships)
         {
-            <form asp-controller="Championships" asp-action="ShowGrandPrixsList">
+            <form asp-controller="Championships" asp-action="ShowChampionship">
                 <input type="hidden" name="championshipId" value="@item.Id" />
                 <input type="submit" value="@item.Name">
             </form>

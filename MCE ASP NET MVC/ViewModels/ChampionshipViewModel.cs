@@ -2,7 +2,7 @@
 
 namespace MCE_ASP_NET_MVC.ViewModels
 {
-    public class GrandPrixViewModel
+    public class ChampionshipViewModel
     {
         public required string ChampionshipId { get; set; }
         public IEnumerable<GrandPrix>? GrandPrixes { get; set; }

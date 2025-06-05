@@ -11,24 +11,24 @@ namespace MCE_ASP_NET_MVC.Services
         public ChampionshipsService(ApplicationDbContext _db, UserManager<IdentityUser> _userManager)
     : base(_db, _userManager) { }
 
-        public async Task<ChampionshipsViewModel> ShowChampionshipsListAsync(ClaimsPrincipal currentUserPrincipal)
+        public async Task<ChampionshipsListViewModel> ShowChampionshipsListAsync(ClaimsPrincipal currentUserPrincipal)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
 
             List<Championship> championships = db.championships.Where(c => c.OwnerId == currentUser.Id).ToList();
 
-            ChampionshipsViewModel championshipsViewModel = new ChampionshipsViewModel() { Championships = championships };
+            ChampionshipsListViewModel championshipsViewModel = new ChampionshipsListViewModel() { Championships = championships };
 
             return championshipsViewModel;
         }
 
-        public async Task<GrandPrixViewModel> ShowGrandPrixsListAsync(ClaimsPrincipal currentUserPrincipal, string championshipId)
+        public async Task<ChampionshipViewModel> ShowChampionshipAsync(ClaimsPrincipal currentUserPrincipal, string championshipId)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
 
             List<GrandPrix> grandPrixes = db.grandprixes.Where(g => g.ChampionshipId == championshipId).ToList();
 
-            GrandPrixViewModel grandPrixViewModel = new GrandPrixViewModel()
+            ChampionshipViewModel grandPrixViewModel = new ChampionshipViewModel()
             {
                 ChampionshipId = championshipId,
                 GrandPrixes = grandPrixes
