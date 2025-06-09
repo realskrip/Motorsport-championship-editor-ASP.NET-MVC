@@ -27,18 +27,18 @@
             </td>
             <td>
                 <p>Members:</p>
-                @* @if (Model.GrandPrixes != null && Model.GrandPrixes.Count() > 0)
+                @if (Model.ChampionshipMembers != null && Model.ChampionshipMembers.Count() > 0)
                 {
-                    @foreach (var item in Model.GrandPrixes)
+                    @foreach (var item in Model.ChampionshipMembers)
                     {
-                        <p>@item.Name</p>
-                        <form asp-controller="Championships" asp-action="RemoveGrandPrix" method="post">
+                        <p>@item.userName  @item.userId</p>
+                        <form asp-controller="Championships" asp-action="RemoveMember" method="post">
                             <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
-                            <input type="hidden" name="grandPrixId" value="@item.Id" />
+                            <input type="hidden" name="memberId" value="@item.userId" />
                             <input type="submit" value="Remove">
                         </form>
                     }
-                } *@
+                }
             </td>
         </tr>
     </table>

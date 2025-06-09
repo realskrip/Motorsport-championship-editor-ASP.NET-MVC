@@ -27,14 +27,31 @@ namespace MCE_ASP_NET_MVC.Services
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
 
             List<GrandPrix> grandPrixes = db.grandprixes.Where(g => g.ChampionshipId == championshipId).ToList();
+            List<ChampionshipMember> championshipMembers = db.championship_members.Where(m => m.ChampionshipId == championshipId).ToList();
 
-            ChampionshipViewModel grandPrixViewModel = new ChampionshipViewModel()
+            ChampionshipViewModel championshipViewModel = new ChampionshipViewModel()
             {
                 ChampionshipId = championshipId,
                 GrandPrixes = grandPrixes
             };
 
-            return grandPrixViewModel;
+            if (championshipMembers != null)
+            {
+                championshipViewModel.ChampionshipMembers = new List<ChampionshipViewModel.ChampionshipMemberViewStruct>();
+
+                foreach (var item in championshipMembers)
+                {
+                    ChampionshipViewModel.ChampionshipMemberViewStruct member = new ChampionshipViewModel.ChampionshipMemberViewStruct()
+                    {
+                        userId = item.UserId,
+                        userName = db.Users.Where(u => u.Id == item.UserId).FirstOrDefault().UserName
+                    };
+
+                    championshipViewModel.ChampionshipMembers.Add(member);
+                }
+            }
+
+            return championshipViewModel;
         }
 
         public void RemoveChampionship(string id)
