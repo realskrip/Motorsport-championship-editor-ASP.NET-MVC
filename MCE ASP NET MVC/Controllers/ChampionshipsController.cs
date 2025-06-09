@@ -39,7 +39,7 @@ namespace MCE_ASP_NET_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> RemoveMemberAsync(string championshipId, string memberId)
         {
-            championshipService.RemoveMember(championshipId, memberId);
+            championshipService.RemoveChampionshipMember(championshipId, memberId);
             return View("ShowChampionship", await championshipService.ShowChampionshipAsync(User, championshipId));
         }
 

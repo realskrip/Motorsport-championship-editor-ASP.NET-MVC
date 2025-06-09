@@ -57,6 +57,7 @@ namespace MCE_ASP_NET_MVC.Services
         internal void RemoveChampionship(string id)
         {
             List<GrandPrix> grandPrixes = db.grandprixes.Where(gp => gp.ChampionshipId == id).ToList();
+            List<ChampionshipMember> championshipMembers = db.championship_members.Where(c => c.ChampionshipId == id).ToList();
             Championship? championship = db.championships.Where(c => c.Id == id).FirstOrDefault();
 
             using (var transaction = db.Database.BeginTransaction())
@@ -65,7 +66,11 @@ namespace MCE_ASP_NET_MVC.Services
                 {
                     if (grandPrixes.Count() > 0)
                         foreach (var item in grandPrixes)
-                            RemoveGrandPrix(item.Id);
+                            db.grandprixes.Remove(item);
+
+                    if (championshipMembers.Count() > 0)
+                        foreach(var item in championshipMembers)
+                            db.championship_members.Remove(item);
 
                     if (championship != null)
                         db.championships.Remove(championship);
@@ -91,7 +96,7 @@ namespace MCE_ASP_NET_MVC.Services
             }
         }
 
-        internal void RemoveMember(string championshipId, string memberId)
+        internal void RemoveChampionshipMember(string championshipId, string memberId)
         {
             ChampionshipMember championshipMember = db.championship_members.Where(m => m.ChampionshipId == championshipId && m.UserId == memberId).FirstOrDefault();
 
