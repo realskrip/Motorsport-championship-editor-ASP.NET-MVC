@@ -11,7 +11,7 @@ namespace MCE_ASP_NET_MVC.Services
         public ChampionshipsService(ApplicationDbContext _db, UserManager<IdentityUser> _userManager)
     : base(_db, _userManager) { }
 
-        public async Task<ChampionshipsListViewModel> ShowChampionshipsListAsync(ClaimsPrincipal currentUserPrincipal)
+        internal async Task<ChampionshipsListViewModel> ShowChampionshipsListAsync(ClaimsPrincipal currentUserPrincipal)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
 
@@ -22,7 +22,7 @@ namespace MCE_ASP_NET_MVC.Services
             return championshipsViewModel;
         }
 
-        public async Task<ChampionshipViewModel> ShowChampionshipAsync(ClaimsPrincipal currentUserPrincipal, string championshipId)
+        internal async Task<ChampionshipViewModel> ShowChampionshipAsync(ClaimsPrincipal currentUserPrincipal, string championshipId)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
 
@@ -43,7 +43,7 @@ namespace MCE_ASP_NET_MVC.Services
                 {
                     ChampionshipViewModel.ChampionshipMemberViewStruct member = new ChampionshipViewModel.ChampionshipMemberViewStruct()
                     {
-                        userId = item.UserId,
+                        memberId = item.UserId,
                         userName = db.Users.Where(u => u.Id == item.UserId).FirstOrDefault().UserName
                     };
 
@@ -54,7 +54,7 @@ namespace MCE_ASP_NET_MVC.Services
             return championshipViewModel;
         }
 
-        public void RemoveChampionship(string id)
+        internal void RemoveChampionship(string id)
         {
             List<GrandPrix> grandPrixes = db.grandprixes.Where(gp => gp.ChampionshipId == id).ToList();
             Championship? championship = db.championships.Where(c => c.Id == id).FirstOrDefault();
@@ -80,7 +80,7 @@ namespace MCE_ASP_NET_MVC.Services
             }
         }
 
-        public void RemoveGrandPrix(string grandPrixId)
+        internal void RemoveGrandPrix(string grandPrixId)
         {
             GrandPrix? grandPrix = db.grandprixes.Where(gp => gp.Id == grandPrixId).FirstOrDefault();
 
@@ -91,7 +91,15 @@ namespace MCE_ASP_NET_MVC.Services
             }
         }
 
-        public async Task CreateChampionshipAsync(ClaimsPrincipal currentUserPrincipal, string name, string? racingRegulations, string pointsAwardingRules)
+        internal void RemoveMember(string championshipId, string memberId)
+        {
+            ChampionshipMember championshipMember = db.championship_members.Where(m => m.ChampionshipId == championshipId && m.UserId == memberId).FirstOrDefault();
+
+            db.championship_members.Remove(championshipMember);
+            db.SaveChanges();
+        }
+
+        internal async Task CreateChampionshipAsync(ClaimsPrincipal currentUserPrincipal, string name, string? racingRegulations, string pointsAwardingRules)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
 
@@ -108,7 +116,7 @@ namespace MCE_ASP_NET_MVC.Services
             db.SaveChanges();
         }
 
-        public async Task CreateGrandPrixAsync(ClaimsPrincipal currentUserPrincipal, string championshipId, string name, string game, string discipline, string carClass, string track, DateTime? dateTime, string? description)
+        internal async Task CreateGrandPrixAsync(ClaimsPrincipal currentUserPrincipal, string championshipId, string name, string game, string discipline, string carClass, string track, DateTime? dateTime, string? description)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
 

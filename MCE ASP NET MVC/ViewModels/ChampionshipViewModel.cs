@@ -6,7 +6,7 @@ namespace MCE_ASP_NET_MVC.ViewModels
     {
         public struct ChampionshipMemberViewStruct
         {
-            public string userId;
+            public string memberId;
             public string userName;
         }
 

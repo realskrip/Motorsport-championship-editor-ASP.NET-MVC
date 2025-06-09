@@ -19,7 +19,7 @@ namespace MCE_ASP_NET_MVC.Services
             notificationsService = _notificationsService;
         }
 
-        public async Task<FriendsViewModel> ShowFriendListAsync(ClaimsPrincipal currentUserPrincipal)
+        internal async Task<FriendsViewModel> ShowFriendListAsync(ClaimsPrincipal currentUserPrincipal)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
             List<UserFriend> userFriends = await db.user_friends.Where(f => f.userId == currentUser.Id).ToListAsync();
@@ -44,7 +44,7 @@ namespace MCE_ASP_NET_MVC.Services
             return friendsViewModel;
         }
 
-        public async Task SendFriendRequestAsync(ClaimsPrincipal currentUserPrincipal, string friendshipСode)
+        internal async Task SendFriendRequestAsync(ClaimsPrincipal currentUserPrincipal, string friendshipСode)
         {
             friendshipСode = friendshipСode.ToLower().Trim();
             
@@ -69,7 +69,7 @@ namespace MCE_ASP_NET_MVC.Services
             }
         }
 
-        public async Task AddFriendAsync(ClaimsPrincipal currentUserPrincipal, string notificationId, string newFriendId)
+        internal async Task AddFriendAsync(ClaimsPrincipal currentUserPrincipal, string notificationId, string newFriendId)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
 
@@ -105,7 +105,7 @@ namespace MCE_ASP_NET_MVC.Services
             }
         }
 
-        public async Task RemoveFriend(ClaimsPrincipal currentUserPrincipal, string friendId)
+        internal async Task RemoveFriend(ClaimsPrincipal currentUserPrincipal, string friendId)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
 

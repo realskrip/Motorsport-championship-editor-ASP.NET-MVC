@@ -30,9 +30,16 @@ namespace MCE_ASP_NET_MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> RemoveGrandPrix(string championshipId, string grandPrixId)
+        public async Task<IActionResult> RemoveGrandPrixAsync(string championshipId, string grandPrixId)
         {
             championshipService.RemoveGrandPrix(grandPrixId);
+            return View("ShowChampionship", await championshipService.ShowChampionshipAsync(User, championshipId));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveMemberAsync(string championshipId, string memberId)
+        {
+            championshipService.RemoveMember(championshipId, memberId);
             return View("ShowChampionship", await championshipService.ShowChampionshipAsync(User, championshipId));
         }
 

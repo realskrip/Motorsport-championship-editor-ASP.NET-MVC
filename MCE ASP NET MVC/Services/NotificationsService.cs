@@ -9,7 +9,7 @@ namespace MCE_ASP_NET_MVC.Services
     {
         public NotificationsService(ApplicationDbContext _db, UserManager<IdentityUser> _userManager) : base(_db, _userManager) { }
 
-        public async Task<NotificationsViewModel> ShowNotificationsListAsync(ClaimsPrincipal currentUserPrincipal)
+        internal async Task<NotificationsViewModel> ShowNotificationsListAsync(ClaimsPrincipal currentUserPrincipal)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
             var notifications = db.notifications.Where(n => n.userId == currentUser.Id);
@@ -18,7 +18,7 @@ namespace MCE_ASP_NET_MVC.Services
             return notificationsViewModel;
         }
 
-        public void RejectNotification(string notificationId)
+        internal void RejectNotification(string notificationId)
         {
             var removedNotification = db.notifications.Find(notificationId);
             db.notifications.Remove(removedNotification);
