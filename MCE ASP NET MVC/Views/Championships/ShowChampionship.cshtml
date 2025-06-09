@@ -27,6 +27,18 @@
             </td>
             <td>
                 <p>Members:</p>
+                @* @if (Model.GrandPrixes != null && Model.GrandPrixes.Count() > 0)
+                {
+                    @foreach (var item in Model.GrandPrixes)
+                    {
+                        <p>@item.Name</p>
+                        <form asp-controller="Championships" asp-action="RemoveGrandPrix" method="post">
+                            <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
+                            <input type="hidden" name="grandPrixId" value="@item.Id" />
+                            <input type="submit" value="Remove">
+                        </form>
+                    }
+                } *@
             </td>
         </tr>
     </table>
