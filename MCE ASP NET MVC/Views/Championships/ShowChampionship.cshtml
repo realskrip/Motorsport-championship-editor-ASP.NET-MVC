@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <body>
+    <p> Championship link: @Model.ChampionshipId</p>
+
     <form asp-controller="Championships" asp-action="ShowCreateGrandPrixForm" method="post">
         <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
         <input type="submit" value="Add Grand prix">

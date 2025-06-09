@@ -17,7 +17,11 @@ namespace MCE_ASP_NET_MVC.Services
 
             List<Championship> championships = db.championships.Where(c => c.OwnerId == currentUser.Id).ToList();
 
-            ChampionshipsListViewModel championshipsViewModel = new ChampionshipsListViewModel() { Championships = championships };
+            ChampionshipsListViewModel championshipsViewModel = new ChampionshipsListViewModel()
+            {
+                CurrentUserId = currentUser.Id,
+                Championships = championships
+            };
 
             return championshipsViewModel;
         }

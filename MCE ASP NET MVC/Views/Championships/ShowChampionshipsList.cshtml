@@ -3,8 +3,16 @@
 <!DOCTYPE html>
 <html>
 <body>
+    <form asp-controller="" asp-action="" method="post">
+        <p>To join the championship, enter the championship link and send a request to join</p>
+
+        <input type="hidden" name="userId" value="@Model.CurrentUserId" required>
+        <input type="text" name="championshipId" required>
+        <input type="submit" value="Submit a request to join">
+    </form>
+    <p></p>
     <a asp-controller="Championships" asp-action="ShowCreateChampionshipForm">Create championship</a>
-    
+
     <p>Championships:</p>
     @if (Model.Championships != null && Model.Championships.Count() > 0)
     {
