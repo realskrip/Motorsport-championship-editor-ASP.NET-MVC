@@ -19,7 +19,6 @@ namespace MCE_ASP_NET_MVC.Services
 
             ChampionshipsListViewModel championshipsViewModel = new ChampionshipsListViewModel()
             {
-                CurrentUserId = currentUser.Id,
                 Championships = championships
             };
 
@@ -143,6 +142,41 @@ namespace MCE_ASP_NET_MVC.Services
             };
 
             db.grandprixes.Add(newGrandPrix);
+            db.SaveChanges();
+        }
+
+        internal async Task SubmitRequestJoinChampionshipAsync(ClaimsPrincipal currentUserPrincipal, string championshipId)
+        {
+            championshipId = championshipId.Trim();
+
+            var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
+            var championship = db.championships.Where(c => c.Id == championshipId).FirstOrDefault();
+            bool isParticipant = db.championship_members.Where(m => m.ChampionshipId == championshipId && m.UserId == currentUser.Id).Any();
+            bool isRepeatSubmit = db.notifications.Where(n => n.userId == championship.OwnerId && n.newMemberId == currentUser.Id && n.championshipId == championshipId).Any();
+
+            if (championship == null)
+                return;
+
+            if (championship.OwnerId == currentUser.Id)
+                return;
+
+            if (isParticipant == true)
+                return;
+
+            if (isRepeatSubmit == true)
+                return;
+
+            Notification newNotification = new Notification()
+            {
+                id = Guid.NewGuid().ToString(),
+                userId = championship.OwnerId,
+                notification = string.Format("{0} wants to join the championship {1}. Accept?", currentUser.UserName, championship.Name),
+                type = Notification.NotificationType.СhampionshipRequest,
+                newMemberId = currentUser.Id,
+                championshipId = championship.Id,
+            };
+
+            db.notifications.Add(newNotification);
             db.SaveChanges();
         }
     }

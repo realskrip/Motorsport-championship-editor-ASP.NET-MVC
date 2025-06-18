@@ -124,10 +124,16 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.Property<string>("id")
                         .HasColumnType("text");
 
+                    b.Property<string>("championshipId")
+                        .HasColumnType("text");
+
                     b.Property<string>("newFriendId")
                         .HasColumnType("text");
 
                     b.Property<string>("newFriendName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("newMemberId")
                         .HasColumnType("text");
 
                     b.Property<string>("notification")

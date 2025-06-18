@@ -187,7 +187,9 @@ namespace MCE_ASP_NET_MVC.Migrations
                     notification = table.Column<string>(type: "text", nullable: false),
                     type = table.Column<int>(type: "integer", nullable: false),
                     newFriendId = table.Column<string>(type: "text", nullable: true),
-                    newFriendName = table.Column<string>(type: "text", nullable: true)
+                    newFriendName = table.Column<string>(type: "text", nullable: true),
+                    newMemberId = table.Column<string>(type: "text", nullable: true),
+                    championshipId = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -214,6 +216,30 @@ namespace MCE_ASP_NET_MVC.Migrations
                         name: "FK_user_friends_AspNetUsers_userId",
                         column: x => x.userId,
                         principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "championship_members",
+                columns: table => new
+                {
+                    ChampionshipId = table.Column<string>(type: "text", nullable: false),
+                    UserId = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_championship_members", x => new { x.ChampionshipId, x.UserId });
+                    table.ForeignKey(
+                        name: "FK_championship_members_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_championship_members_championships_ChampionshipId",
+                        column: x => x.ChampionshipId,
+                        principalTable: "championships",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -281,6 +307,11 @@ namespace MCE_ASP_NET_MVC.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_championship_members_UserId",
+                table: "championship_members",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_championships_OwnerId",
                 table: "championships",
                 column: "OwnerId");
@@ -313,6 +344,9 @@ namespace MCE_ASP_NET_MVC.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "championship_members");
 
             migrationBuilder.DropTable(
                 name: "grandprixes");

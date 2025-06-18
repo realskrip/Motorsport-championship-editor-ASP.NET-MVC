@@ -67,5 +67,12 @@ namespace MCE_ASP_NET_MVC.Controllers
             await championshipService.CreateGrandPrixAsync(User, championshipId, name, game, discipline, carClass, track, dateTime, description);
             return View("ShowChampionship", await championshipService.ShowChampionshipAsync(User, championshipId));
         }
+
+        [HttpPost]
+        public async Task<IActionResult> SubmitRequestJoinChampionshipAsync(string championshipId)
+        {
+            await championshipService.SubmitRequestJoinChampionshipAsync(User, championshipId);
+            return RedirectToAction("ShowChampionshipsList");
+        }
     }
 }

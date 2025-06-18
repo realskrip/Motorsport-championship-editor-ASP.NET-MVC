@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MCE_ASP_NET_MVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250605052517_InitialMigration")]
+    [Migration("20250618093134_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -65,6 +65,21 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.ToTable("championships");
                 });
 
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.ChampionshipMember", b =>
+                {
+                    b.Property<string>("ChampionshipId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("text");
+
+                    b.HasKey("ChampionshipId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("championship_members");
+                });
+
             modelBuilder.Entity("MCE_ASP_NET_MVC.models.GrandPrix", b =>
                 {
                     b.Property<string>("Id")
@@ -112,10 +127,16 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.Property<string>("id")
                         .HasColumnType("text");
 
+                    b.Property<string>("championshipId")
+                        .HasColumnType("text");
+
                     b.Property<string>("newFriendId")
                         .HasColumnType("text");
 
                     b.Property<string>("newFriendName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("newMemberId")
                         .HasColumnType("text");
 
                     b.Property<string>("notification")
@@ -350,6 +371,21 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.ChampionshipMember", b =>
+                {
+                    b.HasOne("MCE_ASP_NET_MVC.models.Championship", null)
+                        .WithMany()
+                        .HasForeignKey("ChampionshipId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
