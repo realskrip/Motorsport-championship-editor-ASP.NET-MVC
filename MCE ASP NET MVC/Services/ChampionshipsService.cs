@@ -3,7 +3,6 @@ using MCE_ASP_NET_MVC.models;
 using MCE_ASP_NET_MVC.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
-using System.Transactions;
 
 namespace MCE_ASP_NET_MVC.Services
 {
@@ -18,9 +17,24 @@ namespace MCE_ASP_NET_MVC.Services
         internal async Task<ChampionshipsListViewModel> ShowChampionshipsListAsync(ClaimsPrincipal currentUserPrincipal)
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
-
+            Championship championship;
+            List<ChampionshipMember> participationInChampionships = db.championship_members.Where(c => c.UserId == currentUser.Id).ToList();
             List<Championship> championships = db.championships.Where(c => c.OwnerId == currentUser.Id).ToList();
 
+            if (participationInChampionships.Count() > 0)
+            {
+                foreach (var item in participationInChampionships)
+                {
+                    championship = db.championships.Where(c => c.Id == item.ChampionshipId).FirstOrDefault();
+
+                    if (championship != null)
+                    {
+                        championships.Add(championship);
+                        championship = null;
+                    }
+                }
+            }
+            
             ChampionshipsListViewModel championshipsViewModel = new ChampionshipsListViewModel()
             {
                 Championships = championships
