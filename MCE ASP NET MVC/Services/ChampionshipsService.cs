@@ -161,9 +161,6 @@ namespace MCE_ASP_NET_MVC.Services
             if (championship == null)
                 return;
 
-            if (championship.OwnerId == currentUser.Id)
-                return;
-
             if (isParticipant == true)
                 return;
 
