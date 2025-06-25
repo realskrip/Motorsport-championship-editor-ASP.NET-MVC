@@ -13,8 +13,7 @@ namespace MCE_ASP_NET_MVC.Services
     {
         private readonly NotificationsService notificationsService;
 
-        public FriendsService(ApplicationDbContext _db, UserManager<IdentityUser> _userManager, NotificationsService _notificationsService)
-            : base(_db, _userManager)
+        public FriendsService(ApplicationDbContext _db, UserManager<IdentityUser> _userManager, NotificationsService _notificationsService) : base(_db, _userManager)
         {
             notificationsService = _notificationsService;
         }
@@ -47,7 +46,7 @@ namespace MCE_ASP_NET_MVC.Services
         internal async Task SendFriendRequestAsync(ClaimsPrincipal currentUserPrincipal, string friendshipСode)
         {
             friendshipСode = friendshipСode.ToLower().Trim();
-            
+
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
             bool isRepeatRequest = db.notifications.Where(n => n.userId == friendshipСode && n.newFriendId == currentUser.Id).Any();
             bool isFriend = db.user_friends.Where(f => f.userId == currentUser.Id && f.friendId == friendshipСode).Any();

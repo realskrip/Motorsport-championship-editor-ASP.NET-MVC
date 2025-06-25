@@ -3,13 +3,17 @@ using MCE_ASP_NET_MVC.models;
 using MCE_ASP_NET_MVC.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using System.Transactions;
 
 namespace MCE_ASP_NET_MVC.Services
 {
     public class ChampionshipsService : ServiceBase
     {
-        public ChampionshipsService(ApplicationDbContext _db, UserManager<IdentityUser> _userManager)
-    : base(_db, _userManager) { }
+        private readonly NotificationsService notificationsService;
+        public ChampionshipsService(ApplicationDbContext _db, UserManager<IdentityUser> _userManager, NotificationsService _notificationsService) : base(_db, _userManager) 
+        {
+            notificationsService = _notificationsService;
+        }
 
         internal async Task<ChampionshipsListViewModel> ShowChampionshipsListAsync(ClaimsPrincipal currentUserPrincipal)
         {
@@ -178,6 +182,31 @@ namespace MCE_ASP_NET_MVC.Services
 
             db.notifications.Add(newNotification);
             db.SaveChanges();
+        }
+
+        internal void AddChampionshipMember(string championshipId, string newMemberId, string notificationId)
+        {
+            Championship championship = db.championships.Where(c => c.Id == championshipId).FirstOrDefault();
+
+            if (championship != null)
+            {
+                ChampionshipMember championshipMember = new ChampionshipMember() { ChampionshipId = championshipId, UserId = newMemberId };
+
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        db.championship_members.Add(championshipMember);
+                        notificationsService.RejectNotification(notificationId);
+                        db.SaveChanges();
+                        transaction.Commit();
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                    }
+                }
+            }
         }
     }
 }

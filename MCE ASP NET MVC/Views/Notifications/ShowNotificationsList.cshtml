@@ -5,11 +5,24 @@
     @foreach (var item in Model.notifications)
     {
         @item.notification
-        <form asp-controller="Friends" asp-action="AddFriend" method="post">
-            <input type="hidden" name="notificationId" value="@item.id" />
-            <input type="hidden" name="newFriendId" value="@item.newFriendId" />
-            <input type="submit" value="Accept" />
-        </form>
+
+        @if (item.type == MCE_ASP_NET_MVC.models.Notification.NotificationType.FriendRequest)
+        {
+            <form asp-controller="Friends" asp-action="AddFriend" method="post">
+                <input type="hidden" name="notificationId" value="@item.id" />
+                <input type="hidden" name="newFriendId" value="@item.newFriendId" />
+                <input type="submit" value="Accept" />
+            </form>
+        }
+        else if (item.type == MCE_ASP_NET_MVC.models.Notification.NotificationType.СhampionshipRequest)
+        {
+            <form asp-controller="Championships" asp-action="AddChampionshipMember" method="post">
+                <input type="hidden" name="notificationId" value="@item.id" />
+                <input type="hidden" name="championshipId" value="@item.championshipId" />
+                <input type="hidden" name="newMemberId" value="@item.newMemberId" />
+                <input type="submit" value="Accept" />
+            </form>
+        }
         <form asp-controller="Notifications" asp-action="RejectNotification" method="post">
             <input type="hidden" name="notificationId" value="@item.id" />
             <input type="submit" value="Reject">
