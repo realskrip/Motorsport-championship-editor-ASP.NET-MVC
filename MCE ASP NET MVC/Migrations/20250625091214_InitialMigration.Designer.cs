@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MCE_ASP_NET_MVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250618093134_InitialMigration")]
+    [Migration("20250625091214_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -72,6 +72,9 @@ namespace MCE_ASP_NET_MVC.Migrations
 
                     b.Property<string>("UserId")
                         .HasColumnType("text");
+
+                    b.Property<int>("RightType")
+                        .HasColumnType("integer");
 
                     b.HasKey("ChampionshipId", "UserId");
 

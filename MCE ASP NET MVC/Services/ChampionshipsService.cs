@@ -195,13 +195,20 @@ namespace MCE_ASP_NET_MVC.Services
             db.SaveChanges();
         }
 
-        internal void AddChampionshipMember(string championshipId, string newMemberId, string notificationId)
+        internal async Task AddChampionshipMemberAsync(ClaimsPrincipal currentUserPrincipal, string championshipId, string newMemberId, string notificationId)
         {
+            var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
             Championship championship = db.championships.Where(c => c.Id == championshipId).FirstOrDefault();
 
             if (championship != null)
             {
-                ChampionshipMember championshipMember = new ChampionshipMember() { ChampionshipId = championshipId, UserId = newMemberId };
+                ChampionshipMember championshipMember = new ChampionshipMember()
+                {
+                    ChampionshipId = championshipId,
+                    UserId = newMemberId,
+                    RightType = newMemberId == currentUser.Id ? ChampionshipMember.rightType.FullAccess : ChampionshipMember.rightType.Reading
+                }
+            ;
 
                 using (var transaction = db.Database.BeginTransaction())
                 {

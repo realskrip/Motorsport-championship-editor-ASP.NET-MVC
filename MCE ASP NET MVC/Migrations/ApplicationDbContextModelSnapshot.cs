@@ -70,6 +70,9 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("text");
 
+                    b.Property<int>("RightType")
+                        .HasColumnType("integer");
+
                     b.HasKey("ChampionshipId", "UserId");
 
                     b.HasIndex("UserId");

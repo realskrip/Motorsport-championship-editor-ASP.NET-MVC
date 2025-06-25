@@ -225,7 +225,8 @@ namespace MCE_ASP_NET_MVC.Migrations
                 columns: table => new
                 {
                     ChampionshipId = table.Column<string>(type: "text", nullable: false),
-                    UserId = table.Column<string>(type: "text", nullable: false)
+                    UserId = table.Column<string>(type: "text", nullable: false),
+                    RightType = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -76,9 +76,9 @@ namespace MCE_ASP_NET_MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddChampionshipMember(string championshipId, string newMemberId, string notificationId)
+        public async Task<IActionResult> AddChampionshipMemberAsync(string championshipId, string newMemberId, string notificationId)
         {
-            championshipService.AddChampionshipMember(championshipId, newMemberId, notificationId);
+            await championshipService.AddChampionshipMemberAsync(User, championshipId, newMemberId, notificationId);
             return RedirectToAction("ShowNotificationsList", "Notifications");
         }
     }
