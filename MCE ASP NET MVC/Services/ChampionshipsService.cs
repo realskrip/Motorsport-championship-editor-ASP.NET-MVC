@@ -25,7 +25,7 @@ namespace MCE_ASP_NET_MVC.Services
             {
                 foreach (var item in participationInChampionships)
                 {
-                    championship = db.championships.Where(c => c.Id == item.ChampionshipId).FirstOrDefault();
+                    championship = db.championships.Where(c => c.Id == item.ChampionshipId && c.OwnerId != currentUser.Id).FirstOrDefault();
 
                     if (championship != null)
                     {
