@@ -13,6 +13,7 @@ namespace MCE_ASP_NET_MVC.Data
         public DbSet<Championship> championships { get; set; } = null!;
         public DbSet<GrandPrix> grandprixes { get; set; } = null!;
         public DbSet<ChampionshipMember> championship_members { get; set; } = null!;
+        public DbSet<GrandPrixResult> grandprix_results { get; set; } = null!;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
@@ -40,6 +41,11 @@ namespace MCE_ASP_NET_MVC.Data
             builder.Entity<ChampionshipMember>().HasKey(a => new { a.ChampionshipId, a.UserId });
             builder.Entity<ChampionshipMember>().HasOne<IdentityUser>().WithMany().HasForeignKey(a => a.UserId);
             builder.Entity<ChampionshipMember>().HasOne<Championship>().WithMany().HasForeignKey(a => a.ChampionshipId);
+
+            // grandprix_results table
+            builder.Entity<GrandPrixResult>().HasKey(a => new { a.GrandPrixId, a.ChampionshipMemberId });
+            builder.Entity<GrandPrixResult>().HasOne<ChampionshipMember>().WithMany().HasForeignKey(a => a.ChampionshipMemberId).HasPrincipalKey(p => p.UserId);
+            builder.Entity<GrandPrixResult>().HasOne<GrandPrix>().WithMany().HasForeignKey(a => a.GrandPrixId);
 
             base.OnModelCreating(builder);
         }

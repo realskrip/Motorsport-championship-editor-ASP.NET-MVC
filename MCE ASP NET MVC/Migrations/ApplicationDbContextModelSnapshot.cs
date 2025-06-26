@@ -75,8 +75,6 @@ namespace MCE_ASP_NET_MVC.Migrations
 
                     b.HasKey("ChampionshipId", "UserId");
 
-                    b.HasIndex("UserId");
-
                     b.ToTable("championship_members");
                 });
 
@@ -120,6 +118,31 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.HasIndex("ChampionshipId");
 
                     b.ToTable("grandprixes");
+                });
+
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.GrandPrixResult", b =>
+                {
+                    b.Property<string>("GrandPrixId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ChampionshipMemberId")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("BestLap")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Place")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("RaceStatus")
+                        .HasColumnType("integer");
+
+                    b.HasKey("GrandPrixId", "ChampionshipMemberId");
+
+                    b.HasIndex("ChampionshipMemberId");
+
+                    b.ToTable("grandprix_results");
                 });
 
             modelBuilder.Entity("MCE_ASP_NET_MVC.models.Notification", b =>
@@ -395,6 +418,22 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.HasOne("MCE_ASP_NET_MVC.models.Championship", null)
                         .WithMany()
                         .HasForeignKey("ChampionshipId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.GrandPrixResult", b =>
+                {
+                    b.HasOne("MCE_ASP_NET_MVC.models.ChampionshipMember", null)
+                        .WithMany()
+                        .HasForeignKey("ChampionshipMemberId")
+                        .HasPrincipalKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MCE_ASP_NET_MVC.models.GrandPrix", null)
+                        .WithMany()
+                        .HasForeignKey("GrandPrixId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

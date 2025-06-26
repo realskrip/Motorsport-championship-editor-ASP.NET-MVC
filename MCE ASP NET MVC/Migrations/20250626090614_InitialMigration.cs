@@ -231,6 +231,7 @@ namespace MCE_ASP_NET_MVC.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_championship_members", x => new { x.ChampionshipId, x.UserId });
+                    table.UniqueConstraint("AK_championship_members_UserId", x => x.UserId);
                     table.ForeignKey(
                         name: "FK_championship_members_AspNetUsers_UserId",
                         column: x => x.UserId,
@@ -266,6 +267,33 @@ namespace MCE_ASP_NET_MVC.Migrations
                         name: "FK_grandprixes_championships_ChampionshipId",
                         column: x => x.ChampionshipId,
                         principalTable: "championships",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "grandprix_results",
+                columns: table => new
+                {
+                    GrandPrixId = table.Column<string>(type: "text", nullable: false),
+                    ChampionshipMemberId = table.Column<string>(type: "text", nullable: false),
+                    Place = table.Column<string>(type: "text", nullable: false),
+                    BestLap = table.Column<bool>(type: "boolean", nullable: false),
+                    RaceStatus = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_grandprix_results", x => new { x.GrandPrixId, x.ChampionshipMemberId });
+                    table.ForeignKey(
+                        name: "FK_grandprix_results_championship_members_ChampionshipMemberId",
+                        column: x => x.ChampionshipMemberId,
+                        principalTable: "championship_members",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_grandprix_results_grandprixes_GrandPrixId",
+                        column: x => x.GrandPrixId,
+                        principalTable: "grandprixes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -308,14 +336,14 @@ namespace MCE_ASP_NET_MVC.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_championship_members_UserId",
-                table: "championship_members",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_championships_OwnerId",
                 table: "championships",
                 column: "OwnerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_grandprix_results_ChampionshipMemberId",
+                table: "grandprix_results",
+                column: "ChampionshipMemberId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_grandprixes_ChampionshipId",
@@ -347,10 +375,7 @@ namespace MCE_ASP_NET_MVC.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "championship_members");
-
-            migrationBuilder.DropTable(
-                name: "grandprixes");
+                name: "grandprix_results");
 
             migrationBuilder.DropTable(
                 name: "notifications");
@@ -360,6 +385,12 @@ namespace MCE_ASP_NET_MVC.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "championship_members");
+
+            migrationBuilder.DropTable(
+                name: "grandprixes");
 
             migrationBuilder.DropTable(
                 name: "championships");
