@@ -21,10 +21,22 @@
                 <input type="hidden" name="championshipId" value="@item.Id" />
                 <input type="submit" value="@item.Name">
             </form>
-            <form asp-controller="Championships" asp-action="RemoveChampionship" method="post">
-                <input type="hidden" name="id" value="@item.Id" />
-                <input type="submit" value="Remove">
-            </form>
+
+            @if (item.OwnerId == Model.CurrentUserId)
+            {
+                <form asp-controller="Championships" asp-action="RemoveChampionship" method="post">
+                    <input type="hidden" name="id" value="@item.Id" />
+                    <input type="submit" value="Remove">
+                </form>
+            }
+            else
+            {
+                <form asp-controller="Championships" asp-action="LeaveChampionship" method="post">
+                    <input type="hidden" name="userId" value="@Model.CurrentUserId" />
+                    <input type="hidden" name="championshipId" value="@item.Id" />
+                    <input type="submit" value="Leave">
+                </form>
+            }
         }
     }
 </body>

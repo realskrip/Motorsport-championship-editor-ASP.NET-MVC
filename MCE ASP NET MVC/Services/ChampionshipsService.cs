@@ -9,7 +9,7 @@ namespace MCE_ASP_NET_MVC.Services
     public class ChampionshipsService : ServiceBase
     {
         private readonly NotificationsService notificationsService;
-        public ChampionshipsService(ApplicationDbContext _db, UserManager<IdentityUser> _userManager, NotificationsService _notificationsService) : base(_db, _userManager) 
+        public ChampionshipsService(ApplicationDbContext _db, UserManager<IdentityUser> _userManager, NotificationsService _notificationsService) : base(_db, _userManager)
         {
             notificationsService = _notificationsService;
         }
@@ -34,9 +34,10 @@ namespace MCE_ASP_NET_MVC.Services
                     }
                 }
             }
-            
+
             ChampionshipsListViewModel championshipsViewModel = new ChampionshipsListViewModel()
             {
+                CurrentUserId = currentUser.Id,
                 Championships = championships
             };
 
@@ -90,7 +91,7 @@ namespace MCE_ASP_NET_MVC.Services
                             db.grandprixes.Remove(item);
 
                     if (championshipMembers.Count() > 0)
-                        foreach(var item in championshipMembers)
+                        foreach (var item in championshipMembers)
                             db.championship_members.Remove(item);
 
                     if (championship != null)
@@ -224,6 +225,17 @@ namespace MCE_ASP_NET_MVC.Services
                         transaction.Rollback();
                     }
                 }
+            }
+        }
+
+        internal void LeaveChampionship(string userId, string championshipId)
+        {
+            ChampionshipMember championshipMember = db.championship_members.Where(m => m.UserId == userId && m.ChampionshipId == championshipId).FirstOrDefault();
+
+            if (championshipMember != null)
+            {
+                db.championship_members.Remove(championshipMember);
+                db.SaveChanges();
             }
         }
     }

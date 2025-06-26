@@ -81,5 +81,12 @@ namespace MCE_ASP_NET_MVC.Controllers
             await championshipService.AddChampionshipMemberAsync(User, championshipId, newMemberId, notificationId);
             return RedirectToAction("ShowNotificationsList", "Notifications");
         }
+
+        [HttpPost]
+        public IActionResult LeaveChampionship(string userId, string championshipId)
+        {
+            championshipService.LeaveChampionship(userId, championshipId);
+            return RedirectToAction("ShowChampionshipsList");
+        }
     }
 }
