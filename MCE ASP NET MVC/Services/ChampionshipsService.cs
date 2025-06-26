@@ -3,6 +3,7 @@ using MCE_ASP_NET_MVC.models;
 using MCE_ASP_NET_MVC.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using static MCE_ASP_NET_MVC.models.ChampionshipMember;
 
 namespace MCE_ASP_NET_MVC.Services
 {
@@ -48,13 +49,20 @@ namespace MCE_ASP_NET_MVC.Services
         {
             var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
 
+            rightType currentUserChampionshipRight = rightType.Reading;
+            Championship championship = db.championships.Where(c => c.Id == championshipId).FirstOrDefault();
             List<GrandPrix> grandPrixes = db.grandprixes.Where(g => g.ChampionshipId == championshipId).ToList();
             List<ChampionshipMember> championshipMembers = db.championship_members.Where(m => m.ChampionshipId == championshipId).ToList();
+
+            if (championship.OwnerId == currentUser.Id)
+                currentUserChampionshipRight = rightType.FullAccess;
+
 
             ChampionshipViewModel championshipViewModel = new ChampionshipViewModel()
             {
                 ChampionshipId = championshipId,
-                GrandPrixes = grandPrixes
+                GrandPrixes = grandPrixes,
+                CurrentUserChampionshipRight = currentUserChampionshipRight
             };
 
             if (championshipMembers != null)

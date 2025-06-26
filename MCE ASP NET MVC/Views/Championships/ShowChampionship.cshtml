@@ -5,10 +5,13 @@
 <body>
     <p> Championship link: @Model.ChampionshipId</p>
 
-    <form asp-controller="Championships" asp-action="ShowCreateGrandPrixForm" method="post">
-        <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
-        <input type="submit" value="Add Grand prix">
-    </form>
+    @if (Model.CurrentUserChampionshipRight == MCE_ASP_NET_MVC.models.ChampionshipMember.rightType.FullAccess)
+    {
+        <form asp-controller="Championships" asp-action="ShowCreateGrandPrixForm" method="post">
+            <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
+            <input type="submit" value="Add Grand prix">
+        </form>
+    }
 
     <table>
         <tr>
@@ -19,11 +22,14 @@
                     @foreach (var item in Model.GrandPrixes)
                     {
                         <p>@item.Name</p>
-                        <form asp-controller="Championships" asp-action="RemoveGrandPrix" method="post">
-                            <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
-                            <input type="hidden" name="grandPrixId" value="@item.Id" />
-                            <input type="submit" value="Remove">
-                        </form>
+                        @if (Model.CurrentUserChampionshipRight == MCE_ASP_NET_MVC.models.ChampionshipMember.rightType.FullAccess)
+                        {
+                            <form asp-controller="Championships" asp-action="RemoveGrandPrix" method="post">
+                                <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
+                                <input type="hidden" name="grandPrixId" value="@item.Id" />
+                                <input type="submit" value="Remove">
+                            </form>
+                        }
                     }
                 }
             </td>
@@ -34,11 +40,14 @@
                     @foreach (var item in Model.ChampionshipMembers)
                     {
                         <p>@item.userName  @item.memberId</p>
-                        <form asp-controller="Championships" asp-action="RemoveMember" method="post">
-                            <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
-                            <input type="hidden" name="memberId" value="@item.memberId" />
-                            <input type="submit" value="Remove">
-                        </form>
+                        @if (Model.CurrentUserChampionshipRight == MCE_ASP_NET_MVC.models.ChampionshipMember.rightType.FullAccess)
+                        {
+                            <form asp-controller="Championships" asp-action="RemoveMember" method="post">
+                                <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
+                                <input type="hidden" name="memberId" value="@item.memberId" />
+                                <input type="submit" value="Remove">
+                            </form>
+                        }
                     }
                 }
             </td>
