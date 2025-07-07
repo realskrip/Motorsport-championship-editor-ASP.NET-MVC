@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\dskripnikov\\Desktop\\mce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Migrations\\20250626090614_InitialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MCE ASP NET MVC\\Migrations\\20250626090614_InitialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\models\\grandprixresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\models\\grandprixresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\models\\grandprix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\models\\grandprix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\views\\championships\\showgrandprixresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\championships\\showgrandprixresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\services\\championshipsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\services\\championshipsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\controllers\\championshipscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\controllers\\championshipscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\views\\championships\\showchampionship.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\views\\championships\\showchampionship.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\viewmodels\\championshipviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\viewmodels\\championshipviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|c:\\users\\dskripnikov\\desktop\\mce\\mce asp net mvc\\models\\championshipmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7164134-76DC-42B6-8DEE-DFBB31D199B4}|MCE ASP NET MVC\\MCE ASP NET MVC.csproj|solutionrelative:mce asp net mvc\\models\\championshipmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,102 +39,54 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20250626090614_InitialMigration.cs",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Migrations\\20250626090614_InitialMigration.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Migrations\\20250626090614_InitialMigration.cs",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Migrations\\20250626090614_InitialMigration.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\Migrations\\20250626090614_InitialMigration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T09:06:14.954Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T08:22:11.161Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GrandPrixResult.cs",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\models\\GrandPrixResult.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\models\\GrandPrixResult.cs",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\models\\GrandPrixResult.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\models\\GrandPrixResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T05:54:06.065Z",
+              "Title": "ShowGrandPrixResult.cshtml",
+              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Views\\Championships\\ShowGrandPrixResult.cshtml",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Championships\\ShowGrandPrixResult.cshtml",
+              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Views\\Championships\\ShowGrandPrixResult.cshtml*",
+              "RelativeToolTip": "MCE ASP NET MVC\\Views\\Championships\\ShowGrandPrixResult.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T08:32:37.746Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GrandPrix.cs",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\models\\GrandPrix.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\models\\GrandPrix.cs",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\models\\GrandPrix.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\models\\GrandPrix.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T04:50:05.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "ShowChampionship.cshtml",
               "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Views\\Championships\\ShowChampionship.cshtml",
               "RelativeDocumentMoniker": "MCE ASP NET MVC\\Views\\Championships\\ShowChampionship.cshtml",
               "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Views\\Championships\\ShowChampionship.cshtml",
               "RelativeToolTip": "MCE ASP NET MVC\\Views\\Championships\\ShowChampionship.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABkAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-26T03:53:40.916Z"
+              "WhenOpened": "2025-07-07T08:11:03.592Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "ChampionshipsController.cs",
+              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Controllers\\ChampionshipsController.cs",
+              "RelativeDocumentMoniker": "MCE ASP NET MVC\\Controllers\\ChampionshipsController.cs",
+              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Controllers\\ChampionshipsController.cs",
+              "RelativeToolTip": "MCE ASP NET MVC\\Controllers\\ChampionshipsController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAiwBAAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T08:19:05.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ChampionshipsService.cs",
               "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Services\\ChampionshipsService.cs",
               "RelativeDocumentMoniker": "MCE ASP NET MVC\\Services\\ChampionshipsService.cs",
               "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\Services\\ChampionshipsService.cs",
               "RelativeToolTip": "MCE ASP NET MVC\\Services\\ChampionshipsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAOgAAAAAAAAAAAAAAPkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T03:49:12.397Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ChampionshipMember.cs",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\models\\ChampionshipMember.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\models\\ChampionshipMember.cs",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\models\\ChampionshipMember.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\models\\ChampionshipMember.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T03:47:37.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ChampionshipViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\ViewModels\\ChampionshipViewModel.cs",
-              "RelativeDocumentMoniker": "MCE ASP NET MVC\\ViewModels\\ChampionshipViewModel.cs",
-              "ToolTip": "C:\\Users\\dskripnikov\\Desktop\\mce\\MCE ASP NET MVC\\ViewModels\\ChampionshipViewModel.cs",
-              "RelativeToolTip": "MCE ASP NET MVC\\ViewModels\\ChampionshipViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T03:44:48.679Z"
+              "WhenOpened": "2025-07-07T08:27:04.42Z",
+              "EditorCaption": ""
             }
           ]
         }

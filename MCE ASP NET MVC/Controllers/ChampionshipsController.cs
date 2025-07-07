@@ -88,5 +88,11 @@ namespace MCE_ASP_NET_MVC.Controllers
             championshipService.LeaveChampionship(userId, championshipId);
             return RedirectToAction("ShowChampionshipsList");
         }
+
+        [HttpPost]
+        public IActionResult ShowGrandPrixResult(string grandPrixId, string championshipId)
+        {
+            return View(championshipService.ShowGrandPrixResult(grandPrixId, championshipId));
+        }
     }
 }

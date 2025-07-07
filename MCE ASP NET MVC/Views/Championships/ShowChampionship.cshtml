@@ -21,7 +21,11 @@
                 {
                     @foreach (var item in Model.GrandPrixes)
                     {
-                        <p>@item.Name</p>
+                        <form asp-controller="Championships" asp-action="ShowGrandPrixResult" method="post">
+                            <input type="hidden" name="grandPrixId" value="@item.Id" />
+                            <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
+                            <input type="submit" value="@item.Name">
+                        </form>
                         @if (Model.CurrentUserChampionshipRight == MCE_ASP_NET_MVC.models.ChampionshipMember.rightType.FullAccess)
                         {
                             <form asp-controller="Championships" asp-action="RemoveGrandPrix" method="post">

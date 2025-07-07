@@ -246,5 +246,12 @@ namespace MCE_ASP_NET_MVC.Services
                 db.SaveChanges();
             }
         }
+
+        internal GrandPrixResultViewModel ShowGrandPrixResult(string grandPrixId, string championshipId)
+        {
+            GrandPrixResultViewModel grandPrixResult = new GrandPrixResultViewModel();
+
+            return grandPrixResult;
+        }
     }
 }
