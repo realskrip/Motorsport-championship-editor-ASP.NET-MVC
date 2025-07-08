@@ -249,9 +249,39 @@ namespace MCE_ASP_NET_MVC.Services
 
         internal GrandPrixResultViewModel ShowGrandPrixResult(string grandPrixId, string championshipId)
         {
+            FormtionGrandPrixResultsTable(grandPrixId, championshipId);
+
             GrandPrixResultViewModel grandPrixResult = new GrandPrixResultViewModel();
 
             return grandPrixResult;
+        }
+
+        private void FormtionGrandPrixResultsTable(string grandPrixId, string championshipId)
+        {
+            List<ChampionshipMember> championshipMemberList = db.championship_members.Where(m => m.ChampionshipId == championshipId).ToList();
+
+            if (championshipMemberList.Count() <= 0)
+                return;
+
+            foreach (var item in championshipMemberList)
+            {
+                var result = db.grandprix_results.Where(r => r.GrandPrixId == grandPrixId && r.ChampionshipMemberId == item.UserId).FirstOrDefault();
+
+                if (result == null)
+                {
+                    GrandPrixResult grandPrixResult = new GrandPrixResult()
+                    {
+                        GrandPrixId = grandPrixId,
+                        ChampionshipMemberId = item.UserId,
+                        Place = "-",
+                        BestLap = false,
+                        RaceStatus = GrandPrixResult.raceStatus.DidNotStart
+                    };
+
+                    db.grandprix_results.Add(grandPrixResult);
+                    db.SaveChanges();
+                }
+            }
         }
     }
 }
