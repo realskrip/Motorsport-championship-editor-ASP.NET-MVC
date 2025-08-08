@@ -1,1 +1,45 @@
-﻿Результаты гонки
+﻿@model MCE_ASP_NET_MVC.ViewModels.GrandPrixResultViewModel
+
+<!DOCTYPE html>
+<html>
+<body>
+    <p>Grand prix result</p>
+
+        <table>
+            <tr>
+                <td>
+                    <p>Racer</p>
+                </td>
+                <td>
+                    <p>Place</p>
+                </td>
+                <td>
+                    <p>Best lap</p>
+                </td>
+                <td>
+                    <p>Race status</p>
+                </td>
+            </tr>
+            @if (Model.grandPrixResults != null && Model.grandPrixResults.Count() > 0 && Model.grandPrixMemberName != null && Model.grandPrixMemberName.Count() > 0)
+            {
+                @for (int i = 0; i < Model.grandPrixResults.Count(); i++)
+                {
+                    <tr>
+                        <td>
+                            <p>@Model.grandPrixMemberName[i]</p>
+                        </td>
+                        <td>
+                            <p>@Model.grandPrixResults[i].Place</p>
+                        </td>
+                        <td>
+                            <p>@Model.grandPrixResults[i].BestLap</p>
+                        </td>
+                        <td>
+                            <p>@Model.grandPrixResults[i].RaceStatus</p>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+</body>
+</html>

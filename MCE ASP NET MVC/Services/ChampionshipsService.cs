@@ -2,6 +2,7 @@
 using MCE_ASP_NET_MVC.models;
 using MCE_ASP_NET_MVC.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using NuGet.Versioning;
 using System.Security.Claims;
 using static MCE_ASP_NET_MVC.models.ChampionshipMember;
 
@@ -249,14 +250,29 @@ namespace MCE_ASP_NET_MVC.Services
 
         internal GrandPrixResultViewModel ShowGrandPrixResult(string grandPrixId, string championshipId)
         {
-            FormtionGrandPrixResultsTable(grandPrixId, championshipId);
+            FormationGrandPrixResultsTable(grandPrixId, championshipId);
 
-            GrandPrixResultViewModel grandPrixResult = new GrandPrixResultViewModel();
+            var result = db.grandprix_results.Where(r => r.GrandPrixId == grandPrixId).ToList();
+
+            var memberNames = (
+                from gpr in db.grandprix_results
+                join cm in db.championship_members on gpr.ChampionshipMemberId equals cm.UserId
+                join u in db.Users on cm.UserId equals u.Id
+                where gpr.GrandPrixId == grandPrixId
+                    && cm.ChampionshipId == championshipId
+                select u.UserName
+                ).ToList();
+
+            GrandPrixResultViewModel grandPrixResult = new GrandPrixResultViewModel()
+            {
+                grandPrixResults = result,
+                grandPrixMemberName = memberNames
+            };
 
             return grandPrixResult;
         }
 
-        private void FormtionGrandPrixResultsTable(string grandPrixId, string championshipId)
+        private void FormationGrandPrixResultsTable(string grandPrixId, string championshipId)
         {
             List<ChampionshipMember> championshipMemberList = db.championship_members.Where(m => m.ChampionshipId == championshipId).ToList();
 
