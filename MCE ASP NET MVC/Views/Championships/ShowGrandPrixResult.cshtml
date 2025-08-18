@@ -5,31 +5,35 @@
 <body>
     <p>Grand prix result</p>
 
-        <table>
-            <tr>
-                <td>
-                    <p>Racer</p>
-                </td>
-                <td>
-                    <p>Place</p>
-                </td>
-                <td>
-                    <p>Best lap</p>
-                </td>
-                <td>
-                    <p>Race status</p>
-                </td>
-            </tr>
-            @if (Model.grandPrixResults != null && Model.grandPrixResults.Count() > 0 && Model.grandPrixMemberName != null && Model.grandPrixMemberName.Count() > 0)
-            {
+    <table>
+        <tr>
+            <td>
+                <p>Racer</p>
+            </td>
+            <td>
+                <p>Place</p>
+            </td>
+            <td>
+                <p>Best lap</p>
+            </td>
+            <td>
+                <p>Race status</p>
+            </td>
+        </tr>
+        @if (Model.grandPrixResults != null && Model.grandPrixResults.Count() > 0 && Model.grandPrixMemberName != null && Model.grandPrixMemberName.Count() > 0)
+        {
+            <form asp-controller="Championships" asp-action="GrandPrixResultsUpdate" method="post">
                 @for (int i = 0; i < Model.grandPrixResults.Count(); i++)
                 {
+                    <input type="hidden" name="grandPrixResults[@i].ChampionshipMemberId" value="@Model.grandPrixResults[i].ChampionshipMemberId">
+                    <input type="hidden" name="grandPrixResults[@i].GrandPrixId" value="@Model.grandPrixResults[i].GrandPrixId">
+                    
                     <tr>
                         <td>
                             <p>@Model.grandPrixMemberName[i]</p>
                         </td>
                         <td>
-                            <p>@Model.grandPrixResults[i].Place</p>
+                            <input name="grandPrixResults[@i].Place" type="text" value="@Model.grandPrixResults[i].Place">
                         </td>
                         <td>
                             <p>@Model.grandPrixResults[i].BestLap</p>
@@ -39,7 +43,11 @@
                         </td>
                     </tr>
                 }
-            }
-        </table>
+                <input type="hidden" name="grandPrixId" value="@Model.grandPrixId">
+                <input type="hidden" name="championshipId" value="@Model.championshipId">
+                <input type="submit" value="Save changes">
+            </form>
+        }
+    </table>
 </body>
 </html>

@@ -21,7 +21,7 @@
                 {
                     @foreach (var item in Model.GrandPrixes)
                     {
-                        <form asp-controller="Championships" asp-action="ShowGrandPrixResult" method="post">
+                        <form asp-controller="Championships" asp-action="ShowGrandPrixResult" method="get">
                             <input type="hidden" name="grandPrixId" value="@item.Id" />
                             <input type="hidden" name="championshipId" value="@Model.ChampionshipId" />
                             <input type="submit" value="@item.Name">

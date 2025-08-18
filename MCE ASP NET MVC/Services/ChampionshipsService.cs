@@ -265,6 +265,8 @@ namespace MCE_ASP_NET_MVC.Services
 
             GrandPrixResultViewModel grandPrixResult = new GrandPrixResultViewModel()
             {
+                grandPrixId = grandPrixId,
+                championshipId = championshipId,
                 grandPrixResults = result,
                 grandPrixMemberName = memberNames
             };
@@ -298,6 +300,14 @@ namespace MCE_ASP_NET_MVC.Services
                     db.SaveChanges();
                 }
             }
+        }
+
+        internal void GrandPrixResultsUpdate(List<GrandPrixResult> grandPrixResults)
+        {
+            foreach (var item in grandPrixResults)
+                db.grandprix_results.Update(item);
+
+            db.SaveChanges();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MCE_ASP_NET_MVC.models;
 using MCE_ASP_NET_MVC.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace MCE_ASP_NET_MVC.Controllers
 {
@@ -89,10 +90,17 @@ namespace MCE_ASP_NET_MVC.Controllers
             return RedirectToAction("ShowChampionshipsList");
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult ShowGrandPrixResult(string grandPrixId, string championshipId)
         {
             return View(championshipService.ShowGrandPrixResult(grandPrixId, championshipId));
+        }
+
+        [HttpPost]
+        public IActionResult GrandPrixResultsUpdate(string grandPrixId, string championshipId, List<GrandPrixResult> grandPrixResults)
+        {
+            championshipService.GrandPrixResultsUpdate(grandPrixResults);
+            return RedirectToAction("ShowGrandPrixResult", new { grandPrixId, championshipId });
         }
     }
 }
