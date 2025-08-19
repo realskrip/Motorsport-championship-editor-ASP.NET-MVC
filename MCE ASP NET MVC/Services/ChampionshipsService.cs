@@ -302,10 +302,17 @@ namespace MCE_ASP_NET_MVC.Services
             }
         }
 
-        internal void GrandPrixResultsUpdate(List<GrandPrixResult> grandPrixResults)
+        internal void GrandPrixResultsUpdate(int bestLapIndex, List<GrandPrixResult> grandPrixResults)
         {
-            foreach (var item in grandPrixResults)
-                db.grandprix_results.Update(item);
+            for (int i = 0; i < grandPrixResults.Count; i++)
+            {
+                if (i == bestLapIndex)
+                    grandPrixResults[i].BestLap = true;
+                else
+                    grandPrixResults[i].BestLap = false;
+
+                db.grandprix_results.Update(grandPrixResults[i]);
+            }
 
             db.SaveChanges();
         }

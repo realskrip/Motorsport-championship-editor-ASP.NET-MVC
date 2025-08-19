@@ -97,9 +97,9 @@ namespace MCE_ASP_NET_MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult GrandPrixResultsUpdate(string grandPrixId, string championshipId, List<GrandPrixResult> grandPrixResults)
+        public IActionResult GrandPrixResultsUpdate(string grandPrixId, string championshipId, int bestLapIndex, List<GrandPrixResult> grandPrixResults)
         {
-            championshipService.GrandPrixResultsUpdate(grandPrixResults);
+            championshipService.GrandPrixResultsUpdate(bestLapIndex, grandPrixResults);
             return RedirectToAction("ShowGrandPrixResult", new { grandPrixId, championshipId });
         }
     }

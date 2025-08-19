@@ -33,9 +33,10 @@
                             <p>@Model.grandPrixMemberName[i]</p>
                         </td>
                         <td>
-                            <input name="grandPrixResults[@i].Place" type="text" value="@Model.grandPrixResults[i].Place">
+                            <input type ="text" name="grandPrixResults[@i].Place" value="@Model.grandPrixResults[i].Place">
                         </td>
                         <td>
+                            <input type="radio" name="bestLapIndex" value="@i" @(Model.grandPrixResults[i].BestLap ? "checked" : "")>
                             <p>@Model.grandPrixResults[i].BestLap</p>
                         </td>
                         <td>
