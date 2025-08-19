@@ -254,14 +254,17 @@ namespace MCE_ASP_NET_MVC.Services
 
             var result = db.grandprix_results.Where(r => r.GrandPrixId == grandPrixId).ToList();
 
-            var memberNames = (
-                from gpr in db.grandprix_results
-                join cm in db.championship_members on gpr.ChampionshipMemberId equals cm.UserId
-                join u in db.Users on cm.UserId equals u.Id
-                where gpr.GrandPrixId == grandPrixId
-                    && cm.ChampionshipId == championshipId
-                select u.UserName
-                ).ToList();
+            Dictionary<string, string> memberNames = new Dictionary<string, string>();
+
+            if (result != null)
+            {
+                foreach (var item in result)
+                {
+                    var member = db.Users.Where(u => u.Id == item.ChampionshipMemberId).FirstOrDefault();
+
+                    memberNames.Add(member.Id, member.UserName);
+                }
+            }
 
             GrandPrixResultViewModel grandPrixResult = new GrandPrixResultViewModel()
             {

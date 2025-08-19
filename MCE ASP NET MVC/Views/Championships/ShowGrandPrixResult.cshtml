@@ -30,7 +30,8 @@
                     
                     <tr>
                         <td>
-                            <p>@Model.grandPrixMemberName[i]</p>
+                            <p>@Model.grandPrixMemberName.Where(u => u.Key == Model.grandPrixResults[i].ChampionshipMemberId).FirstOrDefault().Value</p>
+                            <p>@Model.grandPrixResults[i].ChampionshipMemberId</p>
                         </td>
                         <td>
                             <input type ="text" name="grandPrixResults[@i].Place" value="@Model.grandPrixResults[i].Place">
