@@ -1,6 +1,4 @@
-﻿using MCE_ASP_NET_MVC.Models;
-
-namespace MCE_ASP_NET_MVC.ViewModels
+﻿namespace MCE_ASP_NET_MVC.ViewModels
 {
     public struct Friend
     {

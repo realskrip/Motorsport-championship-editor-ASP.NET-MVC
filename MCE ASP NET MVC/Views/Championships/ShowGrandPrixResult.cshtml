@@ -40,6 +40,11 @@
                             <p>@Model.grandPrixResults[i].BestLap</p>
                         </td>
                         <td>
+                            <select name="grandPrixResults[@i].RaceStatus">
+                                <option value="@(MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.DidNotStart)" selected="@(Model.grandPrixResults[i].RaceStatus == MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.DidNotStart ? "selected" : null)">Did not start</option>
+                                <option value="@(MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.Finished)" selected="@(Model.grandPrixResults[i].RaceStatus == MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.Finished ? "selected" : null)">Finished</option>
+                                <option value="@(MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.NotFinished)" selected="@(Model.grandPrixResults[i].RaceStatus == MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.NotFinished ? "selected" : null)">Not finished</option>
+                            </select>
                             <p>@Model.grandPrixResults[i].RaceStatus</p>
                         </td>
                     </tr>
