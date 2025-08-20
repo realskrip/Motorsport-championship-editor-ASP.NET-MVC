@@ -1,4 +1,5 @@
 ﻿using MCE_ASP_NET_MVC.models;
+using static MCE_ASP_NET_MVC.models.ChampionshipMember;
 
 namespace MCE_ASP_NET_MVC.ViewModels
 {
@@ -8,5 +9,6 @@ namespace MCE_ASP_NET_MVC.ViewModels
         public required string championshipId { get; set; }
         public Dictionary<string, string>? grandPrixMemberName { get; set; }
         public List<GrandPrixResult>? grandPrixResults {  get; set; }
+        public required rightType CurrentUserChampionshipRight { get; set; }
     }
 }

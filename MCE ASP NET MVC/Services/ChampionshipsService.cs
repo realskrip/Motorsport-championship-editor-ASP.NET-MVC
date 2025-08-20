@@ -248,13 +248,20 @@ namespace MCE_ASP_NET_MVC.Services
             }
         }
 
-        internal GrandPrixResultViewModel ShowGrandPrixResult(string grandPrixId, string championshipId)
+        internal async Task<GrandPrixResultViewModel> ShowGrandPrixResultAsync(ClaimsPrincipal currentUserPrincipal, string grandPrixId, string championshipId)
         {
+            var currentUser = await userManager.GetUserAsync(currentUserPrincipal);
+
+            rightType currentUserChampionshipRight = rightType.Reading;
+            Dictionary<string, string> memberNames = new Dictionary<string, string>();
+            Championship championship = db.championships.Where(c => c.Id == championshipId).FirstOrDefault();
+
+            if (championship.OwnerId == currentUser.Id)
+                currentUserChampionshipRight = rightType.FullAccess;
+
             FormationGrandPrixResultsTable(grandPrixId, championshipId);
 
             var result = db.grandprix_results.Where(r => r.GrandPrixId == grandPrixId).ToList();
-
-            Dictionary<string, string> memberNames = new Dictionary<string, string>();
 
             if (result != null)
             {
@@ -271,7 +278,8 @@ namespace MCE_ASP_NET_MVC.Services
                 grandPrixId = grandPrixId,
                 championshipId = championshipId,
                 grandPrixResults = result,
-                grandPrixMemberName = memberNames
+                grandPrixMemberName = memberNames,
+                CurrentUserChampionshipRight = currentUserChampionshipRight
             };
 
             return grandPrixResult;

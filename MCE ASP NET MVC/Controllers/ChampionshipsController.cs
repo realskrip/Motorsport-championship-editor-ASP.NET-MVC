@@ -91,9 +91,9 @@ namespace MCE_ASP_NET_MVC.Controllers
         }
 
         [HttpGet]
-        public IActionResult ShowGrandPrixResult(string grandPrixId, string championshipId)
+        public async Task<IActionResult> ShowGrandPrixResultAsync(string grandPrixId, string championshipId)
         {
-            return View(championshipService.ShowGrandPrixResult(grandPrixId, championshipId));
+            return View(await championshipService.ShowGrandPrixResultAsync(User, grandPrixId, championshipId));
         }
 
         [HttpPost]

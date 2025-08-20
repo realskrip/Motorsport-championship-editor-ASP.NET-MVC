@@ -34,25 +34,47 @@
                             <p>@Model.grandPrixResults[i].ChampionshipMemberId</p>
                         </td>
                         <td>
-                            <input type ="text" name="grandPrixResults[@i].Place" value="@Model.grandPrixResults[i].Place">
+                            @if (Model.CurrentUserChampionshipRight == MCE_ASP_NET_MVC.models.ChampionshipMember.rightType.FullAccess)
+                            {
+                                <input type ="text" name="grandPrixResults[@i].Place" value="@Model.grandPrixResults[i].Place">
+                            }
+                            else
+                            {
+                                <p>@Model.grandPrixResults[i].Place</p>
+                            }
                         </td>
                         <td>
-                            <input type="radio" name="bestLapIndex" value="@i" @(Model.grandPrixResults[i].BestLap ? "checked" : "")>
-                            <p>@Model.grandPrixResults[i].BestLap</p>
+                            @if (Model.CurrentUserChampionshipRight == MCE_ASP_NET_MVC.models.ChampionshipMember.rightType.FullAccess)
+                            {
+                                <input type="radio" name="bestLapIndex" value="@i" @(Model.grandPrixResults[i].BestLap ? "checked" : "")>
+                            }
+                            else
+                            {
+                                <p>@Model.grandPrixResults[i].BestLap</p>
+                            }
                         </td>
                         <td>
-                            <select name="grandPrixResults[@i].RaceStatus">
-                                <option value="@(MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.DidNotStart)" selected="@(Model.grandPrixResults[i].RaceStatus == MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.DidNotStart ? "selected" : null)">Did not start</option>
-                                <option value="@(MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.Finished)" selected="@(Model.grandPrixResults[i].RaceStatus == MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.Finished ? "selected" : null)">Finished</option>
-                                <option value="@(MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.NotFinished)" selected="@(Model.grandPrixResults[i].RaceStatus == MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.NotFinished ? "selected" : null)">Not finished</option>
-                            </select>
-                            <p>@Model.grandPrixResults[i].RaceStatus</p>
+                            @if (Model.CurrentUserChampionshipRight == MCE_ASP_NET_MVC.models.ChampionshipMember.rightType.FullAccess)
+                            {
+                                <select name="grandPrixResults[@i].RaceStatus">
+                                    <option value="@(MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.DidNotStart)" selected="@(Model.grandPrixResults[i].RaceStatus == MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.DidNotStart ? "selected" : null)">Did not start</option>
+                                    <option value="@(MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.Finished)" selected="@(Model.grandPrixResults[i].RaceStatus == MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.Finished ? "selected" : null)">Finished</option>
+                                    <option value="@(MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.NotFinished)" selected="@(Model.grandPrixResults[i].RaceStatus == MCE_ASP_NET_MVC.models.GrandPrixResult.raceStatus.NotFinished ? "selected" : null)">Not finished</option>
+                                </select>
+                            }
+                            else
+                            {
+                                <p>@Model.grandPrixResults[i].RaceStatus</p>
+                            }
                         </td>
                     </tr>
                 }
                 <input type="hidden" name="grandPrixId" value="@Model.grandPrixId">
                 <input type="hidden" name="championshipId" value="@Model.championshipId">
-                <input type="submit" value="Save changes">
+                @if (Model.CurrentUserChampionshipRight == MCE_ASP_NET_MVC.models.ChampionshipMember.rightType.FullAccess)
+                {
+                    <input type="submit" value="Save changes">
+                }
             </form>
         }
     </table>
