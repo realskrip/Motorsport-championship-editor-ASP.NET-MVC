@@ -15,5 +15,6 @@ namespace MCE_ASP_NET_MVC.ViewModels
         public IEnumerable<GrandPrix>? GrandPrixes { get; set; }
         public List<ChampionshipMemberViewStruct>? ChampionshipMembers { get; set; }
         public required rightType CurrentUserChampionshipRight {  get; set; }
+        public string[,]? IndividualChampionshipStandings { get; set; }
     }
 }

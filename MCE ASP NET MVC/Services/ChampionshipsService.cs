@@ -63,7 +63,8 @@ namespace MCE_ASP_NET_MVC.Services
             {
                 ChampionshipId = championshipId,
                 GrandPrixes = grandPrixes,
-                CurrentUserChampionshipRight = currentUserChampionshipRight
+                CurrentUserChampionshipRight = currentUserChampionshipRight,
+                IndividualChampionshipStandings = FormationIndividualChampionshipStandings(championshipId)
             };
 
             if (championshipMembers != null)
@@ -171,6 +172,8 @@ namespace MCE_ASP_NET_MVC.Services
 
             db.grandprixes.Add(newGrandPrix);
             db.SaveChanges();
+
+            FormationGrandPrixResultsTable(newGrandPrix.Id, championshipId);
         }
 
         internal async Task SubmitRequestJoinChampionshipAsync(ClaimsPrincipal currentUserPrincipal, string championshipId)
@@ -234,6 +237,15 @@ namespace MCE_ASP_NET_MVC.Services
                         transaction.Rollback();
                     }
                 }
+
+                var grandPrixes = db.grandprixes.Where(gp => gp.ChampionshipId == championshipId).ToList();
+                if (grandPrixes != null && grandPrixes.Count() > 0)
+                {
+                    foreach (var item in grandPrixes)
+                    {
+                        FormationGrandPrixResultsTable(item.Id, championshipId);
+                    }
+                }
             }
         }
 
@@ -258,8 +270,6 @@ namespace MCE_ASP_NET_MVC.Services
 
             if (championship.OwnerId == currentUser.Id)
                 currentUserChampionshipRight = rightType.FullAccess;
-
-            FormationGrandPrixResultsTable(grandPrixId, championshipId);
 
             var result = db.grandprix_results.Where(r => r.GrandPrixId == grandPrixId).ToList();
 
@@ -327,6 +337,74 @@ namespace MCE_ASP_NET_MVC.Services
             }
 
             db.SaveChanges();
+        }
+
+        internal string[,] FormationIndividualChampionshipStandings(string championshipId)
+        {
+            var grandPrixes = db.grandprixes.Where(gp => gp.ChampionshipId == championshipId).ToList();
+            var championshipMembers = db.championship_members.Where(m => m.ChampionshipId == championshipId).ToList();
+
+            int rows = championshipMembers.Count() + 1;
+            int columns = grandPrixes.Count() + 2;
+
+            string[,] resultTable = new string[rows, columns];
+            resultTable[0, 0] = "Racer";
+            resultTable[0, 1] = "Σ";
+
+            var grandPrixResults = (
+                from gpr in db.grandprix_results
+                join gp in db.grandprixes on gpr.GrandPrixId equals gp.Id
+                where gp.ChampionshipId == championshipId
+                select gpr
+                ).ToList();
+
+            // Set grandPrixes id
+            for (int i = 2, j = 0; i < columns; i++, j++)
+            {
+                resultTable[0, i] = grandPrixes[j].Id;
+            }
+
+            // Set championship members names
+            for (int i = 1, j = 0; i < rows; i++, j++)
+            {
+                resultTable[i, 0] = championshipMembers[j].UserId;
+            }
+
+            // Set points
+            for (int i = 1; i < rows; i++)
+            {
+                for (int j = 2; j < columns; j++)
+                {
+                    resultTable[i, j] = grandPrixResults.Where(p => p.ChampionshipMemberId == resultTable[i, 0] && p.GrandPrixId == resultTable[0, j]).FirstOrDefault().Points;
+                }
+            }
+
+            // Set points sum
+            for (int i = 1; i < rows; i++)
+            {
+                int sum = 0;
+
+                foreach (var item in grandPrixResults)
+                {
+                    if (item.ChampionshipMemberId == resultTable[i, 0])
+                    {
+                        if (Int32.TryParse(item.Points, out int x) == true)
+                            sum += x;
+                    }
+                }
+
+                resultTable[i, 1] = sum.ToString();
+            }
+
+            // Replace championship member Id with championship member name
+            for (int i = 1; i < rows; i++)
+                resultTable[i, 0] += db.Users.Where(u => u.Id == resultTable[i, 0]).FirstOrDefault().UserName;
+
+            // Replace grand prix Id with grand prix name
+            for (int i = 2; i < columns; i++)
+                resultTable[0, i] += grandPrixes.Where(gp => gp.Id == resultTable[0, i]).FirstOrDefault().Name;
+
+            return resultTable;
         }
     }
 }
