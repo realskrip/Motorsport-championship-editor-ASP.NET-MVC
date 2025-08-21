@@ -304,7 +304,8 @@ namespace MCE_ASP_NET_MVC.Services
                         ChampionshipMemberId = item.UserId,
                         Place = "-",
                         BestLap = false,
-                        RaceStatus = GrandPrixResult.raceStatus.DidNotStart
+                        RaceStatus = GrandPrixResult.raceStatus.DidNotStart,
+                        Points = "-"
                     };
 
                     db.grandprix_results.Add(grandPrixResult);

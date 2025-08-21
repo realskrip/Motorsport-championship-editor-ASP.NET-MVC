@@ -279,7 +279,8 @@ namespace MCE_ASP_NET_MVC.Migrations
                     ChampionshipMemberId = table.Column<string>(type: "text", nullable: false),
                     Place = table.Column<string>(type: "text", nullable: false),
                     BestLap = table.Column<bool>(type: "boolean", nullable: false),
-                    RaceStatus = table.Column<int>(type: "integer", nullable: false)
+                    RaceStatus = table.Column<int>(type: "integer", nullable: false),
+                    Points = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {

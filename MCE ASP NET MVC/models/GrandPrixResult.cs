@@ -14,5 +14,6 @@
         public required string Place {  get; set; }
         public required bool BestLap { get; set; }
         public required raceStatus RaceStatus { get; set; }
+        public required string Points { get; set; }
     }
 }

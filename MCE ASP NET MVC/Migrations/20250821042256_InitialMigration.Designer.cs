@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MCE_ASP_NET_MVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250626090614_InitialMigration")]
+    [Migration("20250821042256_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -24,19 +24,6 @@ namespace MCE_ASP_NET_MVC.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("MCE_ASP_NET_MVC.Models.UserFriend", b =>
-                {
-                    b.Property<string>("userId")
-                        .HasColumnType("text");
-
-                    b.Property<string>("friendId")
-                        .HasColumnType("text");
-
-                    b.HasKey("userId", "friendId");
-
-                    b.ToTable("user_friends");
-                });
 
             modelBuilder.Entity("MCE_ASP_NET_MVC.models.Championship", b =>
                 {
@@ -138,6 +125,10 @@ namespace MCE_ASP_NET_MVC.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Points")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("RaceStatus")
                         .HasColumnType("integer");
 
@@ -181,6 +172,19 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.HasIndex("userId");
 
                     b.ToTable("notifications");
+                });
+
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.UserFriend", b =>
+                {
+                    b.Property<string>("userId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("friendId")
+                        .HasColumnType("text");
+
+                    b.HasKey("userId", "friendId");
+
+                    b.ToTable("user_friends");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -383,15 +387,6 @@ namespace MCE_ASP_NET_MVC.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("MCE_ASP_NET_MVC.Models.UserFriend", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
-                        .WithMany()
-                        .HasForeignKey("userId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("MCE_ASP_NET_MVC.models.Championship", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
@@ -442,6 +437,15 @@ namespace MCE_ASP_NET_MVC.Migrations
                 });
 
             modelBuilder.Entity("MCE_ASP_NET_MVC.models.Notification", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("userId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MCE_ASP_NET_MVC.models.UserFriend", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
